@@ -1,0 +1,120 @@
+# Polish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:2
+msgid "# NetworkManager"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:6
+msgid ""
+"[NetworkManager(8)](https://man.voidlinux.org/NetworkManager.8) is a daemon "
+"that manages Ethernet, Wi-Fi, and mobile broadband network connections. "
+"Install the `NetworkManager` package for the basic NetworkManager utilities."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:8
+msgid "## Starting NetworkManager"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:13
+msgid ""
+"Before enabling the NetworkManager daemon, [disable](../services/index.md) "
+"any other network management services, such as [dhcpcd](./index.md#dhcpcd), "
+"[wpa_supplicant](./wpa_supplicant.md), or `wicd`. These services all control "
+"network interface configuration, and will interfere with NetworkManager."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:17
+msgid ""
+"Also ensure that the `dbus` service is [enabled](../services/index.md) and "
+"running. NetworkManager uses `dbus` to expose networking information and a "
+"control interface to clients, and will fail to start without it."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:19
+msgid "Finally, enable the `NetworkManager` service."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:21
+msgid "## Configuring NetworkManager"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:23
+msgid "Users of NetworkManager must belong to the `network` group."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:27
+msgid ""
+"The `NetworkManager` package includes a command line tool, [nmcli(1)]"
+"(https://man.voidlinux.org/nmcli.1), and a text-based user interface, "
+"[nmtui(1)](https://man.voidlinux.org/nmtui.1), to control network settings."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:31
+msgid ""
+"There are many other front-ends to NetworkManager, including `nm-applet` for "
+"system trays, `nm-plasma` for KDE Plasma, and a built-in network "
+"configuration tool in GNOME."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:33
+msgid "## Eduroam with NetworkManager"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:37
+msgid ""
+"Eduroam is a roaming service providing international, secure Internet access "
+"at universities and other academic institutions. More information can be "
+"found [here](https://www.eduroam.org/)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:39
+msgid "### Dependencies"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:41
+msgid "Install the `python3-dbus` package."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:43
+msgid "### Installation"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/networkmanager.md:46
+msgid ""
+"Download the correct eduroam_cat installer for your institution from [here]"
+"(https://cat.eduroam.org/) and execute it. It will provide a user interface "
+"guiding you through the process."
+msgstr ""

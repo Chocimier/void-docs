@@ -1,0 +1,126 @@
+# Spanish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 09:52+0200\n"
+"PO-Revision-Date: 2020-09-19 09:52+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: Plain text
+#: src/config/media/alsa.md:2
+msgid "# ALSA"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/alsa.md:5
+msgid ""
+"To use ALSA, install the `alsa-utils` package and make sure your user is a "
+"member of the `audio` group."
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/alsa.md:9
+msgid ""
+"The `alsa-utils` package provides the `alsa` service. When enabled, this "
+"service saves and restores the state of ALSA (e.g. volume) at shutdown and "
+"boot, respectively."
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/alsa.md:15
+msgid ""
+"To allow use of software requiring PulseAudio, install the `apulse` "
+"package.  `apulse` provides part of the PulseAudio interface expected by "
+"applications, translating calls to that interface into calls to ALSA. For "
+"details about using `apulse`, consult [the project README](https://github."
+"com/i-rinat/apulse/blob/master/README.md)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/alsa.md:17 src/config/media/sndio.md:7
+#: src/config/bluetooth.md:37 src/config/graphical-session/wayland.md:75
+#: src/config/network/iwd.md:22 src/installation/guides/chroot.md:130
+#: src/installation/guides/arm-devices/index.md:114
+msgid "## Configuration"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/alsa.md:20
+msgid ""
+"The default sound card can be specified via ALSA configuration files or via "
+"kernel module options."
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/alsa.md:22
+msgid "To obtain information about the order of loaded sound card modules:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/alsa.md:29
+#, no-wrap
+msgid ""
+"```\n"
+"$ cat /proc/asound/modules\n"
+" 0 snd_hda_intel\n"
+" 1 snd_hda_intel\n"
+" 2 snd_usb_audio\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/alsa.md:32
+msgid ""
+"To set a different card as the default, edit `/etc/asound.conf` or the per-"
+"user configuration file `~/.asoundrc`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/alsa.md:37
+msgid "``` defaults.ctl.card 2; defaults.pcm.card 2; ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/alsa.md:39
+msgid "or specify sound card module order in `/etc/modprobe.d/alsa.conf`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/alsa.md:43
+msgid "``` options snd_usb_audio index=0 ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/alsa.md:45
+msgid "## Dmix"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/alsa.md:49
+msgid ""
+"The `dmix` ALSA plugin allows playing sound from multiple sources. `dmix` is "
+"enabled by default for soundcards which do not support hardware mixing. To "
+"enable it for digital output, edit `/etc/asound.conf`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/alsa.md:55
+#, no-wrap
+msgid ""
+"```\n"
+"pcm.dsp {\n"
+"    type plug\n"
+"    slave.pcm \"dmix\"\n"
+"}\n"
+"```\n"
+msgstr ""

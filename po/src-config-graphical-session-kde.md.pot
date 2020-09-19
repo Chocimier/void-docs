@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/config/network/iwd.md:7 src/config/bluetooth.md:18
+#: src/config/graphical-session/kde.md:4 src/config/graphical-session/xorg.md:9
+#: src/config/graphical-session/wayland.md:7
+#: src/config/graphical-session/gnome.md:9
+#: src/installation/guides/arm-devices/index.md:23
+msgid "## Installation"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/kde.md:2
+msgid "# KDE"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/kde.md:6
+msgid ""
+"Install the `kde5` package, and optionally, the `kde5-baseapps` package."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/kde.md:8
+msgid ""
+"To use the \"Networks\" widget, enable the `dbus` and `NetworkManager` "
+"services."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/kde.md:17
+msgid ""
+"Installing the `kde5` package also installs the `sddm` package, which "
+"provides the `sddm` service for the Simple Desktop Display Manager. This "
+"service depends on the `dbus` service being enabled; [test the service](../"
+"services/index.md#testing-services) before enabling it. If you are not "
+"intending to run SDDM via a remote X server, you will need to install either "
+"the `xorg-minimal` package or the `xorg` package. By default, SDDM will "
+"start an X-based Plasma session, but you can request a Wayland-based Plasma "
+"session instead."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/kde.md:21
+msgid ""
+"If you wish to start an X-based session from the console, use [startx](./"
+"xorg.md#startx) to run `startplasma-x11`. For a Wayland-based session, run "
+"`startplasma-wayland` directly."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/kde.md:23
+msgid "## Dolphin"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/kde.md:27
+msgid ""
+"Dolphin is the default file manager of the KDE desktop environment. It can "
+"be installed on its own by installing the `dolphin` package, or it can be "
+"installed as part of the `kde5-baseapps` meta-package."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/kde.md:29
+msgid "### Thumbnail Previews"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/kde.md:34
+msgid ""
+"To enable thumbnail file previews, install the `kdegraphics-thumbnailers` "
+"package. If you want video thumbnails, the `ffmpegthumbs` package is also "
+"necessary. Enable previews in \"Control\" -> \"Configure Dolphin\" -> "
+"\"General\" -> \"Previews\" by checking the corresponding boxes. File "
+"previews will be shown for the selected file types after clicking \"Preview"
+"\" in Dolphin's toolbar."
+msgstr ""

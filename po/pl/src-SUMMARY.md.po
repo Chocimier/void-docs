@@ -1,0 +1,322 @@
+# Polish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Language: pl_PL\n"
+"X-Source-Language: C\n"
+
+#. type: Plain text
+#: src/SUMMARY.md:2
+msgid "# Summary"
+msgstr "# Spis treści"
+
+#. type: Bullet: '- '
+#: src/SUMMARY.md:79
+msgid "[About](./about/index.md)"
+msgstr "[O Voidzie](./about/index.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[History](./about/history.md)"
+msgstr "[Historia](./about/history.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[About This Handbook](./about/about-this-handbook.md)"
+msgstr "[O podręczniku](./about/about-this-handbook.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[InfraDocs](./about/infradocs.md)"
+msgstr "[InfraDocs](./about/infradocs.md)"
+
+#. type: Bullet: '- '
+#: src/SUMMARY.md:79
+msgid "[Installation](./installation/index.md)"
+msgstr "[Instalacja](./installation/index.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Live Installers](./installation/live-images/index.md)"
+msgstr "[Obrazy instalacyjne](./installation/live-images/index.md)"
+
+#. type: Bullet: '      - '
+#: src/SUMMARY.md:79
+msgid "[Prepare Installation Media](./installation/live-images/prep.md)"
+msgstr ""
+"[Przygotowanie nośnika instalacyjnego](./installation/live-images/prep.md)"
+
+#. type: Bullet: '      - '
+#: src/SUMMARY.md:79
+msgid "[Partitioning Notes](./installation/live-images/partitions.md)"
+msgstr "[Partycjonowanie](./installation/live-images/partitions.md)"
+
+#. type: Bullet: '      - '
+#: src/SUMMARY.md:79
+msgid "[Installation Guide](./installation/live-images/guide.md)"
+msgstr "[Instrukcja instalacji](./installation/live-images/guide.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Advanced Installation Guides](./installation/guides/index.md)"
+msgstr "[Zaawansowane aspekty instalacji](./installation/guides/index.md)"
+
+#. type: Bullet: '      - '
+#: src/SUMMARY.md:79
+msgid "[Installation via chroot (x86/x86_64)](./installation/guides/chroot.md)"
+msgstr ""
+"[Instalacja z użyciem chroot (x86/x86_64)](./installation/guides/chroot.md)"
+
+#. type: Bullet: '      - '
+#: src/SUMMARY.md:79
+msgid "[Full Disk Encryption](./installation/guides/fde.md)"
+msgstr "[Szyfrowanie dysku](./installation/guides/fde.md)"
+
+#. type: Bullet: '      - '
+#: src/SUMMARY.md:79
+msgid "[ARM Devices](./installation/guides/arm-devices/index.md)"
+msgstr "[Urządzenia ARM](./installation/guides/arm-devices/index.md)"
+
+#. type: Bullet: '         - '
+#: src/SUMMARY.md:79
+msgid "[Supported Platforms](./installation/guides/arm-devices/platforms.md)"
+msgstr "[Obsługiwany sprzęt](./installation/guides/arm-devices/platforms.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[musl](./installation/musl.md)"
+msgstr ""
+
+#. type: Bullet: '- '
+#: src/SUMMARY.md:79
+msgid "[Configuration](./config/index.md)"
+msgstr "[Konfiguracja](./config/index.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Manual Pages](./config/man.md)"
+msgstr "[Podręczniki programów](./config/man.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Firmware](./config/firmware.md)"
+msgstr ""
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Locales and Translations](./config/locales.md)"
+msgstr "[Polonizacja programów](./config/locales.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Users and Groups](./config/users-and-groups.md)"
+msgstr "[Użytkownicy i grupy](./config/users-and-groups.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Services and Daemons - runit](./config/services/index.md)"
+msgstr "[Demony i usługi- runit](./config/services/index.md)"
+
+#. type: Bullet: '      - '
+#: src/SUMMARY.md:79
+msgid "[Per-User Services](./config/services/user-services.md)"
+msgstr ""
+"[Usługi zarządzane przez użytkownika](./config/services/user-services.md)"
+
+#. type: Bullet: '      - '
+#: src/SUMMARY.md:79
+msgid "[Logging](./config/services/logging.md)"
+msgstr "[Logowanie](./config/services/logging.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[rc.conf, rc.local and rc.shutdown](./config/rc-files.md)"
+msgstr "[rc.conf, rc.local, rc.shutdown](./config/rc-files.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Cron](./config/cron.md)"
+msgstr ""
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Solid State Drives](./config/ssd.md)"
+msgstr "[Dyski SSD](./config/ssd.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Security](./config/security/index.md)"
+msgstr "[ZAbezpieczenia](./config/security/index.md)"
+
+#. type: Bullet: '      - '
+#: src/SUMMARY.md:79
+msgid "[AppArmor](./config/security/apparmor.md)"
+msgstr ""
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Date and Time](./config/date-time.md)"
+msgstr "[Zegar](./config/date-time.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Kernel](./config/kernel.md)"
+msgstr "[Jądro](./config/kernel.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Power Management](./config/power-management.md)"
+msgstr "[Zarządzanie energią](./config/power-management.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Network](./config/network/index.md)"
+msgstr "[Sieci](./config/network/index.md)"
+
+#. type: Bullet: '      - '
+#: src/SUMMARY.md:79
+msgid "[Firewalls](./config/network/firewalls.md)"
+msgstr "[Zapora sieciowa](./config/network/firewalls.md)"
+
+#. type: Bullet: '      - '
+#: src/SUMMARY.md:79
+msgid "[wpa_supplicant](./config/network/wpa_supplicant.md)"
+msgstr ""
+
+#. type: Bullet: '      - '
+#: src/SUMMARY.md:79
+msgid "[IWD](./config/network/iwd.md)"
+msgstr ""
+
+#. type: Bullet: '      - '
+#: src/SUMMARY.md:79
+msgid "[NetworkManager](./config/network/networkmanager.md)"
+msgstr ""
+
+#. type: Bullet: '      - '
+#: src/SUMMARY.md:79
+msgid "[ConnMan](./config/network/connman.md)"
+msgstr ""
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Network Filesystems](./config/network-filesystems.md)"
+msgstr "[Sieciowe systemy plików](./config/network-filesystems.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Session and Seat Management](./config/session-management.md)"
+msgstr "[Zarządzanie stanowiskami](./config/session-management.md)"
+
+#. type: Bullet: '   - '
+#: src/SUMMARY.md:79
+msgid "[Graphical Session](./config/graphical-session/index.md)"
+msgstr "[Środowisko graficzne](./config/graphical-session/index.md)"
+
+#. type: Bullet: '      - '
+#: src/SUMMARY.md:79
+msgid ""
+"[Graphics Drivers](./config/graphical-session/graphics-drivers/index.md)"
+msgstr ""
+"[Sterowniki grafiki](./config/graphical-session/graphics-drivers/index.md)"
+
+#. type: Bullet: '         - '
+#: src/SUMMARY.md:79
+msgid "[AMD or ATI](./config/graphical-session/graphics-drivers/amd.md)"
+msgstr "[AMD i ATI](./config/graphical-session/graphics-drivers/amd.md)"
+
+#. type: Bullet: '         - '
+#: src/SUMMARY.md:79
+msgid "[Intel](./config/graphical-session/graphics-drivers/intel.md)"
+msgstr ""
+
+#. type: Bullet: '         - '
+#: src/SUMMARY.md:79
+msgid "[NVIDIA](./config/graphical-session/graphics-drivers/nvidia.md)"
+msgstr ""
+
+#. type: Plain text
+#: src/SUMMARY.md:79
+#, no-wrap
+msgid ""
+"         - [NVIDIA\n"
+"            Optimus](./config/graphical-session/graphics-drivers/optimus.md)\n"
+"      - [Xorg](./config/graphical-session/xorg.md)\n"
+"      - [Wayland](./config/graphical-session/wayland.md)\n"
+"      - [Fonts](./config/graphical-session/fonts.md)\n"
+"      - [Icons](./config/graphical-session/icons.md)\n"
+"      - [GNOME](./config/graphical-session/gnome.md)\n"
+"      - [KDE](./config/graphical-session/kde.md)\n"
+"   - [Multimedia](./config/media/index.md)\n"
+"      - [ALSA](./config/media/alsa.md)\n"
+"      - [PulseAudio](./config/media/pulseaudio.md)\n"
+"      - [sndio](./config/media/sndio.md)\n"
+"   - [Bluetooth](./config/bluetooth.md)\n"
+"   - [TeX Live](./config/texlive.md)\n"
+"   - [External Applications](./config/external-applications.md)\n"
+"   - [Printing](./config/print/index.md)\n"
+"   - [Containers and Virtual Machines](./config/containers-and-vms/index.md)\n"
+"      - [libvirt](./config/containers-and-vms/libvirt.md)\n"
+"      - [LXC](./config/containers-and-vms/lxc.md)\n"
+"- [XBPS Package Manager](./xbps/index.md)\n"
+"   - [Advanced Usage](./xbps/advanced-usage.md)\n"
+"   - [Repositories](./xbps/repositories/index.md)\n"
+"      - [Mirrors](./xbps/repositories/mirrors/index.md)\n"
+"         - [Changing Mirrors](./xbps/repositories/mirrors/changing.md)\n"
+"         - [Using Tor Mirrors](./xbps/repositories/mirrors/tor.md)\n"
+"      - [Restricted Packages](./xbps/repositories/restricted.md)\n"
+"      - [Custom Repositories](./xbps/repositories/custom.md)\n"
+"      - [Signing Repositories](./xbps/repositories/signing.md)\n"
+"   - [Troubleshooting XBPS](./xbps/troubleshooting/index.md)\n"
+"      - [Common Issues](./xbps/troubleshooting/common-issues.md)\n"
+"      - [Static XBPS](./xbps/troubleshooting/static.md)\n"
+"- [Contributing](./contributing/index.md)\n"
+"   - [Contributing To void-docs](./contributing/void-docs/index.md)\n"
+msgstr ""
+"         - [NVIDIA\n"
+"            Optimus](./config/graphical-session/graphics-drivers/optimus.md)\n"
+"      - [Xorg](./config/graphical-session/xorg.md)\n"
+"      - [Wayland](./config/graphical-session/wayland.md)\n"
+"      - [Kroje pisma](./config/graphical-session/fonts.md)\n"
+"      - [Ikony](./config/graphical-session/icons.md)\n"
+"      - [GNOME](./config/graphical-session/gnome.md)\n"
+"      - [KDE](./config/graphical-session/kde.md)\n"
+"   - [Multimedia](./config/media/index.md)\n"
+"      - [ALSA](./config/media/alsa.md)\n"
+"      - [PulseAudio](./config/media/pulseaudio.md)\n"
+"      - [sndio](./config/media/sndio.md)\n"
+"   - [Bluetooth](./config/bluetooth.md)\n"
+"   - [TeX Live](./config/texlive.md)\n"
+"   - [Programy niedostępne w menadżerze pakietów](./config/external-applications.md)\n"
+"   - [Drukowanie](./config/print/index.md)\n"
+"   - [Konterery i maszyny wirtualne](./config/containers-and-vms/index.md)\n"
+"      - [libvirt](./config/containers-and-vms/libvirt.md)\n"
+"      - [LXC](./config/containers-and-vms/lxc.md)\n"
+"- [Menadżer pakietów XBPS](./xbps/index.md)\n"
+"   - [Zaawansowane tematy](./xbps/advanced-usage.md)\n"
+"   - [Repozytoria](./xbps/repositories/index.md)\n"
+"      - [Serwery lustrzane](./xbps/repositories/mirrors/index.md)\n"
+"         - [Wybów serwera](./xbps/repositories/mirrors/changing.md)\n"
+"         - [Serwery w Torze](./xbps/repositories/mirrors/tor.md)\n"
+"      - [Pakiety nierozprowadzane](./xbps/repositories/restricted.md)\n"
+"      - [Repozytoria zewnętrzne](./xbps/repositories/custom.md)\n"
+"      - [Podpisywanie repositoriów](./xbps/repositories/signing.md)\n"
+"   - [Rozwiązywanie problemów z XBPS](./xbps/troubleshooting/index.md)\n"
+"      - [Częste problemy](./xbps/troubleshooting/common-issues.md)\n"
+"      - [Statyczny XBPS](./xbps/troubleshooting/static.md)\n"
+"- [Współtworzenie](./contributing/index.md)\n"
+"   - [Współtworzenie tego podręcznika](./contributing/void-docs/index.md)\n"

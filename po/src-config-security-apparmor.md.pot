@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/config/security/apparmor.md:2
+msgid "# AppArmor"
+msgstr ""
+
+#. type: Plain text
+#: src/config/security/apparmor.md:5
+msgid ""
+"AppArmor is a mandatory access control mechanism (like SELinux). It can "
+"constrain programs based on pre-defined or generated policy definitions."
+msgstr ""
+
+#. type: Plain text
+#: src/config/security/apparmor.md:9
+msgid ""
+"Void ships with some default profiles for several services, such as `dhcpcd` "
+"and `wpa_supplicant`. Container runtimes such as LXC and podman integrate "
+"with AppArmor for better security for container payloads."
+msgstr ""
+
+#. type: Plain text
+#: src/config/security/apparmor.md:11
+msgid "To use AppArmor on a system, one must:"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: src/config/security/apparmor.md:16
+msgid "Install the `apparmor` package."
+msgstr ""
+
+#. type: Bullet: '2. '
+#: src/config/security/apparmor.md:16
+msgid ""
+"Set the `APPARMOR` variable in `/etc/default/apparmor` to `enforce` or "
+"`complain`."
+msgstr ""
+
+#. type: Bullet: '3. '
+#: src/config/security/apparmor.md:16
+msgid "Set `apparmor=1 security=apparmor` on the kernel commandline."
+msgstr ""
+
+#. type: Plain text
+#: src/config/security/apparmor.md:18
+msgid ""
+"To accomplish the third step, consult [the documentation on how to modify "
+"the kernel cmdline](./../kernel.md#cmdline)."
+msgstr ""

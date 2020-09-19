@@ -1,0 +1,95 @@
+# Russian translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. type: Plain text
+#: src/contributing/index.md:2
+msgid "# Contributing"
+msgstr ""
+
+#. type: Plain text
+#: src/contributing/index.md:4
+msgid "There's more to running a distribution than just writing code."
+msgstr ""
+
+#. type: Plain text
+#: src/contributing/index.md:8
+msgid ""
+"To contribute to the Void packages repository, start by reading the "
+"[CONTRIBUTING](https://github.com/void-linux/void-packages/blob/master/"
+"CONTRIBUTING.md)  document in the void-packages GitHub repository."
+msgstr ""
+
+#. type: Plain text
+#: src/contributing/index.md:12
+msgid ""
+"To contribute to this Handbook, read [CONTRIBUTING](https://github.com/void-"
+"linux/void-docs/blob/master/CONTRIBUTING.md)  in the void-docs repository."
+msgstr ""
+
+#. type: Plain text
+#: src/contributing/index.md:16
+msgid ""
+"If you have any questions, feel free to ask them via IRC in #voidlinux on "
+"irc.freenode.net, or in [the voidlinux subreddit](https://reddit.com/r/"
+"voidlinux)."
+msgstr ""
+
+#. type: Plain text
+#: src/contributing/index.md:18
+msgid "## Usage Statistics"
+msgstr ""
+
+#. type: Plain text
+#: src/contributing/index.md:23
+msgid ""
+"If you would like to contribute usage reports, the [PopCorn](https://github."
+"com/the-maldridge/popcorn) program reports installation statistics back to "
+"the Void project. These statistics are purely opt-in - PopCorn is *not* "
+"installed or enabled by default on any Void systems."
+msgstr ""
+
+#. type: Plain text
+#: src/contributing/index.md:29
+#, no-wrap
+msgid ""
+"*PopCorn* only reports which packages are installed, their version, and the host\n"
+"CPU architecture (the output of `xuname`). This does not report which services\n"
+"are enabled, or any other personal information. Individual systems are tracked\n"
+"persistently by a random (client-generated) UUID, to ensure that each system is\n"
+"only counted once in each 24-hour sampling period.\n"
+msgstr ""
+
+#. type: Plain text
+#: src/contributing/index.md:32
+msgid ""
+"The data collected by *PopCorn* is available to view at <http://popcorn."
+"voidlinux.org>"
+msgstr ""
+
+#. type: Plain text
+#: src/contributing/index.md:34
+msgid "### Setting up PopCorn"
+msgstr ""
+
+#. type: Plain text
+#: src/contributing/index.md:36
+msgid ""
+"First, install the `PopCorn` package. Then, enable the `popcorn` service, "
+"which will attempt to report statistics once per day."
+msgstr ""

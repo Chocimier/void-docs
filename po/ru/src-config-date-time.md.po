@@ -1,0 +1,188 @@
+# Russian translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. type: Plain text
+#: src/config/date-time.md:2
+msgid "# Date and Time"
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:5
+msgid ""
+"To view your system's current date and time information, as well as make "
+"direct changes to it, use [date(1)](https://man.voidlinux.org/date.1)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:7 src/installation/live-images/guide.md:65
+msgid "## Timezone"
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:10
+msgid ""
+"The default system timezone can be set by linking the timezone file to `/etc/"
+"localtime`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:14
+msgid "``` # ln -sf /usr/share/zoneinfo/<timezone> /etc/localtime ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:17
+msgid ""
+"To change the timezone on a per user basis, the `TZ` variable can be "
+"exported from your shell's profile:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:21
+msgid "``` export TZ=<timezone> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:26
+msgid ""
+"Note that setting the *timezone* does not set the *time* (or date); instead, "
+"it simply specifies an offset from [UTC](https://en.wikipedia.org/wiki/"
+"Coordinated_Universal_Time), as described in [timezone(3)](https://man."
+"voidlinux.org/timezone.3)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:28
+msgid "## Hardware clock"
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:33
+msgid ""
+"By default, the hardware clock in Void is stored as UTC. Windows does not "
+"use UTC by default, and if you are dual-booting, this will conflict with "
+"Void. You can either change Windows to use UTC, or change Void Linux to use "
+"`localtime` by setting the `HARDWARECLOCK` variable in `/etc/rc.conf`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:37
+msgid "``` export HARDWARECLOCK=localtime ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:39
+msgid ""
+"For more details, see [hwclock(8)](https://man.voidlinux.org/hwclock.8)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:41
+msgid "## NTP"
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:44
+msgid ""
+"To maintain accuracy of your system's clock, you can use the [Network Time "
+"Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (NTP)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:46
+msgid "Void provides packages for three NTP daemons: NTP, OpenNTPD and Chrony."
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:49
+msgid ""
+"Once you have installed an NTP daemon, you can [enable the service](../"
+"config/services/index.md#managing-services)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:51
+msgid "### NTP"
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:53
+msgid ""
+"NTP is the official reference implementation of the Network Time Protocol."
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:55
+msgid "The `ntp` package provides NTP and the `isc-ntpd` service."
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:57
+msgid "For further information, visit [the NTP site](https://www.ntp.org/)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:59
+msgid "### OpenNTPD"
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:62
+msgid ""
+"OpenNTPD focuses on providing a secure, lean NTP implementation which \"just "
+"works\" with reasonable accuracy for a majority of use-cases."
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:64
+msgid "The `openntpd` package provides OpenNTPD and the `openntpd` service."
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:66
+msgid ""
+"For further information, visit [the OpenNTPD site](http://www.openntpd.org/)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:68
+msgid "### Chrony"
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:71
+msgid ""
+"Chrony is designed to work well in a variety of conditions; it can "
+"synchronize faster and with greater accuracy than NTP."
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:73
+msgid "The `chrony` package provides Chrony and the `chronyd` service."
+msgstr ""
+
+#. type: Plain text
+#: src/config/date-time.md:77
+msgid ""
+"The Chrony site provides [a brief overview of its advantages over NTP]"
+"(https://chrony.tuxfamily.org/faq."
+"html#_how_does_code_chrony_code_compare_to_code_ntpd_code), as well as [a "
+"detailed feature comparison between Chrony, NTP and OpenNTPD](https://chrony."
+"tuxfamily.org/comparison.html)."
+msgstr ""

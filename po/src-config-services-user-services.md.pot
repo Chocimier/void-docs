@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/config/services/user-services.md:2
+msgid "# Per-User Services"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/user-services.md:9
+msgid ""
+"Sometimes it can be nice to have user-specific runit services. For example, "
+"you might want to open an ssh tunnel as the current user, run a virtual "
+"machine, or regularly run daemons on your behalf. The most common way to do "
+"this is to create a system-level service that runs [runsvdir(8)](https://man."
+"voidlinux.org/runsvdir.8) as your user, in order to start and monitor the "
+"services in a personal services directory."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/user-services.md:12
+msgid ""
+"For example, you could create a service called `/etc/sv/runsvdir-<username>` "
+"with the following `run` script:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/user-services.md:15 src/config/ssd.md:32
+msgid "``` #!/bin/sh"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/user-services.md:18
+msgid "export USER=\"<username>\" export HOME=\"/home/<username>\""
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/user-services.md:21
+msgid "groups=\"$(id -Gn \"$USER\" | tr ' ' ':')\" svdir=\"$HOME/service\""
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/user-services.md:24
+msgid "exec chpst -u \"$USER:$groups\" runsvdir \"$svdir\" ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/user-services.md:32
+msgid ""
+"In this example [chpst(8)](https://man.voidlinux.org/chpst.8) is used to "
+"start a new [runsvdir(8)](https://man.voidlinux.org/runsvdir.8) process as "
+"the specified user. [chpst(8)](https://man.voidlinux.org/chpst.8) does not "
+"read groups on its own, but expects the user to list all required groups "
+"separated by a `:`. The `id` and `tr` pipe is used to create a list of all "
+"the user's groups in a way [chpst(8)](https://man.voidlinux.org/chpst.8) "
+"understands it. Note that we export `$USER` and `$HOME` because some user "
+"services may not work without them."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/user-services.md:38
+msgid ""
+"The user can then create new services or symlinks to them in the `/home/"
+"<username>/service` directory. To control the services using the [sv(8)]"
+"(https://man.voidlinux.org/sv.8) command, the user can specify the services "
+"by path, or by name if the `SVDIR` environment variable is set to the user's "
+"services directory. This is shown in the following examples:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/user-services.md:46
+msgid ""
+"``` $ sv status ~/service/* run: /home/duncan/service/gpg-agent: (pid 901) "
+"33102s run: /home/duncan/service/ssh-agent: (pid 900) 33102s $ SVDIR=~/"
+"service sv restart gpg-agent ok: run: gpg-agent: (pid 19818) 0s ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/user-services.md:48
+msgid ""
+"It may be convenient to export the `SVDIR=~/service` variable in your shell "
+"profile."
+msgstr ""

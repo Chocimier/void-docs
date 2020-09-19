@@ -1,0 +1,196 @@
+# Russian translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:2
+msgid "# Repositories"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:7
+msgid ""
+"Repositories are the heart of the XBPS package system. Repositories can be "
+"local or remote. A repository contains binary package files, which may have "
+"signatures, and a data file named `$ARCH-repodata` (e.g. `x86_64-repodata`), "
+"which may also be signed."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:10
+msgid ""
+"Note that, while local repositories do not require signatures, remote "
+"repositories *must* be signed."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:12
+msgid "## The main repository"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:15
+msgid ""
+"The locations of the main repository in relation to a base [mirror URL](./"
+"mirrors/index.md) are:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:19
+msgid ""
+"- glibc: `/current` - musl: `/current/musl` - aarch64 and aarch64-musl: `/"
+"current/aarch64`"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:21
+msgid "## Subrepositories"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:25
+msgid ""
+"In addition to the main repository, which is enabled upon installation, Void "
+"provides other official repositories maintained by the Void project, but not "
+"enabled by default:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:30
+msgid ""
+"- nonfree: contains software packages with non-free licenses - multilib: "
+"contains 32-bit libraries for 64-bit systems (glibc only)  - multilib/"
+"nonfree: contains non-free multilib packages - debug: contains debugging "
+"symbols for packages"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:34
+msgid ""
+"These repositories can be enabled via the installation of the relevant "
+"package.  These packages only install a repository configuration file in `/"
+"usr/share/xbps.d`."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:36
+msgid "### nonfree"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:39
+msgid ""
+"Void has a `nonfree` repository for packages that don't have free licenses. "
+"It can enabled by installing the `void-repo-nonfree` package."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:41
+msgid ""
+"Packages can end up in the `nonfree` repository for a number of reasons:"
+msgstr ""
+
+#. type: Bullet: '- '
+#: src/xbps/repositories/index.md:46
+msgid "Non-free licensed software with released source-code."
+msgstr ""
+
+#. type: Bullet: '- '
+#: src/xbps/repositories/index.md:46
+msgid "Software released only as redistributable binary packages."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:46
+#, no-wrap
+msgid ""
+"- Patented technology, which may or may not have an (otherwise) open\n"
+"   implementation.\n"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:48
+msgid "### multilib"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:52
+msgid ""
+"The `multilib` repository provides 32-bit packages as a compatibility layer "
+"inside a 64-bit system. It can be enabled by installing the `void-repo-"
+"multilib` package."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:55
+msgid ""
+"These repositories are only available for `x86_64` systems running the "
+"`glibc` C library."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:57
+msgid "### multilib/nonfree"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:61
+msgid ""
+"The `multilib/nonfree` repository provides additional 32-bit packages which "
+"have non-free licenses. It can be enabled by installing the `void-repo-"
+"multilib-nonfree` package."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:63
+msgid "### debug"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:68
+msgid ""
+"Void Linux packages come without debugging symbols. If you want to debug "
+"software or look at a core dump you will need the debugging symbols. These "
+"packages are contained in the debug repository. It can be enabled by "
+"installing the `void-repo-debug` package."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:71
+msgid ""
+"Once enabled, symbols may be obtained for `<package>` by installing "
+"`<package>-dbg`."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:73
+msgid "#### Finding debug dependencies"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:77
+msgid ""
+"The `xtools` package contains the [xdbg(1)](https://man.voidlinux.org/"
+"xtools.1)  utility to retrieve a list of debug packages, including "
+"dependencies, for a package:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/index.md:83
+msgid "``` $ xdbg bash bash-dbg glibc-dbg # xbps-install -S $(xdbg bash)  ```"
+msgstr ""

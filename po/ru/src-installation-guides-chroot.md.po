@@ -1,0 +1,593 @@
+# Russian translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 09:52+0200\n"
+"PO-Revision-Date: 2020-09-19 09:52+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. type: Plain text
+#: src/config/media/alsa.md:17 src/config/media/sndio.md:7
+#: src/config/bluetooth.md:37 src/config/graphical-session/wayland.md:75
+#: src/config/network/iwd.md:22 src/installation/guides/chroot.md:130
+#: src/installation/guides/arm-devices/index.md:114
+msgid "## Configuration"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:2
+msgid "# Installation via chroot (x86/x86_64)"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:9
+msgid ""
+"This guide details the process of manually installing Void via a chroot on "
+"an x86 or x86_64 PC architecture. It is assumed that you have a familiarity "
+"with Linux, but not necessarily with installing a Linux system via a chroot. "
+"This guide can be used to create a a \"typical\" setup, using a single "
+"partition on a single SATA/IDE/USB disk. Each step may be modified to create "
+"less typical setups, such as [full disk encryption](./fde.md)."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:14
+msgid ""
+"Void provides two options for bootstrapping the new installation. The **XBPS "
+"method** uses the [XBPS Package Manager](../../xbps/index.md) running on a "
+"host operating system to install the base system. The **ROOTFS method** "
+"installs the base system by unpacking a ROOTFS tarball."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:19
+msgid ""
+"The **XBPS method** requires that the host operating system have XBPS "
+"installed.  This may be an existing installation of Void, an official [live "
+"image](../live-images/prep.md), or any Linux installation running a "
+"[statically linked XBPS](../../xbps/troubleshooting/static.md)."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:24
+msgid ""
+"The **ROOTFS method** requires only a host operating system that can enter a "
+"Linux chroot and that has both [tar(1)](https://man.voidlinux.org/tar.1) and "
+"[xz(1)](https://man.voidlinux.org/xz.1) installed. This method may be "
+"preferable if you wish to install Void using a different Linux distribution."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:26
+msgid "## Prepare Filesystems"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:32
+msgid ""
+"[Partition your disks](../live-images/partitions.md) and format them using "
+"[mke2fs(8)](https://man.voidlinux.org/mke2fs.8), [mkfs.xfs(8)](https://man."
+"voidlinux.org/mkfs.xfs.8), [mkfs.btrfs(8)](https://man.voidlinux.org/mkfs."
+"btrfs.8) or whatever tools are necessary for your filesystem(s) of choice."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:37
+msgid ""
+"[mkfs.vfat(8)](https://man.voidlinux.org/mkfs.vfat.8) is also available to "
+"create FAT32 partitions. However, due to restrictions associated with FAT "
+"filesystems, it should only be used when no other filesystem is suitable "
+"(such as for the EFI System Partition)."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:43
+msgid ""
+"[cfdisk(8)](https://man.voidlinux.org/cfdisk.8) and [fdisk(8)](https://man."
+"voidlinux.org/fdisk.8) are available on the live images for partitioning, "
+"but you may wish to use [gdisk(8)](https://man.voidlinux.org/gdisk.8) (from "
+"the package `gptfdisk`) or [parted(8)](https://man.voidlinux.org/parted.8) "
+"instead."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:47
+msgid ""
+"For a UEFI booting system, make sure to create an EFI System Partition "
+"(ESP).  The ESP should have the partition type \"EFI System\" (code `EF00`) "
+"and be formatted as FAT32 using [mkfs.vfat(8)](https://man.voidlinux.org/"
+"mkfs.vfat.8)."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:51
+msgid ""
+"If you're unsure what partitions to create, create a 1GB partition of type "
+"\"EFI System\" (code `EF00`), then create a second partition of type \"Linux "
+"Filesystem\" (code `8300`) using the remainder of the drive."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:53
+msgid "Format these partitions as FAT32 and ext4, respectively:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:58
+msgid "``` # mkfs.vfat /dev/sda1 # mkfs.ext4 /dev/sda2 ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:60
+msgid "### Create a New Root and Mount Filesystems"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:63
+msgid ""
+"This guide will assume the new root filesystem is mounted on `/mnt`. You may "
+"wish to mount it elsewhere."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:65
+msgid "If using UEFI, mount the EFI System Partition as `/mnt/boot/efi`."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:68
+msgid ""
+"For example, if `/dev/sda2` is to be mounted as `/` and `dev/sda1` is the "
+"EFI System Partition:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:74
+msgid ""
+"``` # mount /dev/sda2 /mnt/ # mkdir -p /mnt/boot/efi/ # mount /dev/sda1 /mnt/"
+"boot/efi/ ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:77
+msgid ""
+"Initialize swap space, if desired, using [mkswap(8)](https://man.voidlinux."
+"org/mkswap.8)."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:79
+msgid "## Base Installation"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:81
+msgid "Follow only one of the two following subsections."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:83
+msgid "### The XBPS Method"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:88
+msgid ""
+"Select a [mirror](../../xbps/repositories/mirrors/index.md) and use the "
+"[appropriate URL](../../xbps/repositories/index.md#the-main-repository) for "
+"the type of system you wish to install. For simplicity, save this URL to a "
+"shell variable for later use, e.g.:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:92
+msgid "``` # REPO=https://alpha.de.repo.voidlinux.org/current ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:96
+msgid ""
+"XBPS also needs to know what architecture is being installed. Available "
+"options are `x86_64`, `x86_64-musl` and `i686` for PC architecture "
+"computers. For example:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:100
+msgid "``` # ARCH=x86_64 ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:105
+msgid ""
+"This architecture must be compatible with your current operating system, but "
+"does not need to be the same. If your host is running an x86_64 operating "
+"system, any of the three architectures can be installed (whether the host is "
+"musl or glibc), but an i686 host can only install i686 distributions."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:108
+msgid ""
+"Use [xbps-install(1)](https://man.voidlinux.org/xbps-install.1) to bootstrap "
+"the installation by installing the `base-system` metapackage:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:112
+msgid ""
+"``` # XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R \"$REPO\" base-system ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:116
+msgid ""
+"`xbps-install` might ask you to [verify the RSA keys](../../xbps/"
+"troubleshooting/common-issues.md#verifying-rsa-keys) for the packages you "
+"are installing."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:118
+msgid "### The ROOTFS Method"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:122
+msgid ""
+"[Download a ROOTFS tarball](https://voidlinux.org/download/#download-"
+"installable-base-live-images-and-rootfs-tarballs)  matching your "
+"architecture."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:124
+msgid "Unpack the tarball into the newly configured filesystems:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:128
+msgid "``` # tar xvf void-<...>-ROOTFS.tar.xz -C /mnt ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:134
+msgid ""
+"With the exception of the section \"Install base-system (ROOTFS method "
+"only)\", the remainder of this guide is common to both the XBPS and ROOTFS "
+"installation methods."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:136
+msgid "### Entering the Chroot"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:138
+msgid "Mount the pseudo-filesystems needed for a chroot:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:144
+msgid ""
+"``` # mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys # mount --"
+"rbind /dev /mnt/dev && mount --make-rslave /mnt/dev # mount --rbind /proc /"
+"mnt/proc && mount --make-rslave /mnt/proc ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:147
+msgid ""
+"Copy the DNS configuration into the new root so that XBPS can still download "
+"new packages inside the chroot:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:151
+msgid "``` # cp /etc/resolv.conf /mnt/etc/ ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:153
+msgid "Chroot into the new installation:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:157
+msgid "``` # PS1='(chroot) # ' chroot /mnt/ /bin/bash ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:159
+msgid "### Install base-system (ROOTFS method only)"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:163
+msgid ""
+"ROOTFS images generally contain out of date software, due to being a "
+"snapshot of the time when they were built, and do not come with a complete "
+"`base-system`.  Update the package manager and install `base-system`:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:170
+msgid ""
+"``` # xbps-install -Su xbps # xbps-install -u # xbps-install base-system # "
+"xbps-remove base-voidstrap ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:172
+msgid "### Installation Configuration"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:177
+msgid ""
+"Specify the hostname in `/etc/hostname`. Go through the options in [`/etc/rc."
+"conf`](../../config/rc-files.md#rcconf). If installing a glibc distribution, "
+"edit `/etc/default/libc-locales`, uncommenting desired [locales](../../"
+"config/locales.md)."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:180
+msgid ""
+"[nvi(1)](https://man.voidlinux.org/nvi.1) is available in the chroot, but "
+"you may wish to install your preferred text editor at this time."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:182
+msgid "For glibc builds, generate locale files with:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:186
+msgid "``` (chroot) # xbps-reconfigure -f glibc-locales ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:188
+msgid "### Set a Root Password"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:193
+msgid ""
+"[Configure at least one super user account](../../config/users-and-groups."
+"md).  Other user accounts can be configured later, but there should either "
+"be a root password, or a new user account with [sudo(8)](https://man."
+"voidlinux.org/sudo.8)  privileges."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:195
+msgid "To set a root password, run:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:199
+msgid "``` (chroot) # passwd ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:201
+msgid "### Configure fstab"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:204
+msgid ""
+"The [fstab(5)](https://man.voidlinux.org/fstab.5) file can be automatically "
+"generated from currently mounted filesystems by copying the file `/proc/"
+"mounts`:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:208
+msgid "``` (chroot) # cp /proc/mounts /etc/fstab ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:210
+msgid ""
+"Remove lines in `/etc/fstab` that refer to `proc`, `sys`, `devtmpfs` and "
+"`pts`."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:219
+msgid ""
+"Replace references to `/dev/sdXX`, `/dev/nvmeXnYpZ`, etc. with their "
+"respective UUID, which can be found by running [blkid(8)](https://man."
+"voidlinux.org/blkid.8). Referring to filesystems by their UUID guarantees "
+"they will be found even if they are assigned a different name at a later "
+"time. In some situations, such as booting from USB, this is absolutely "
+"essential. In other situations, disks will always have the same name unless "
+"drives are physically added or removed. Therefore, this step may not be "
+"strictly necessary, but is almost always recommended."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:223
+msgid ""
+"Change the last zero of the entry for `/` to `1`, and the last zero of every "
+"other line to `2`. These values configure the behaviour of [fsck(8)](https://"
+"man.voidlinux.org/fsck.8)."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:226
+msgid ""
+"For example, the partition scheme used throughout previous examples yields "
+"the following `fstab`:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:231
+#, no-wrap
+msgid ""
+"```\n"
+"/dev/sda1       /boot/EFI   vfat    rw,relatime,[...]       0 0\n"
+"/dev/sda2       /           ext4    rw,relatime             0 0\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:233
+msgid "The information from `blkid` results in the following `/etc/fstab`:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:238
+#, no-wrap
+msgid ""
+"```\n"
+"UUID=6914[...]  /boot/EFI   vfat    rw,relatime,[...]       0 2\n"
+"UUID=dc1b[...]  /           ext4    rw,relatime             0 1\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:241
+msgid ""
+"Note: The output of `/proc/mounts` will have a single space between each "
+"field.  The columns are aligned here for readability."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:243
+msgid "Add an entry to mount `/tmp` in RAM:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:247
+#, no-wrap
+msgid ""
+"```\n"
+"tmpfs           /tmp        tmpfs   defaults,nosuid,nodev   0 0\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:249
+msgid "If using swap space, add an entry for any swap partitions:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:253
+#, no-wrap
+msgid ""
+"```\n"
+"UUID=1cb4[...]  swap        swap    rw,noatime,discard      0 0\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:255
+msgid "## Installing GRUB"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:259
+msgid ""
+"Use [grub-install](https://www.gnu.org/software/grub/manual/grub/html_node/"
+"Installing-GRUB-using-grub_002dinstall.html)  to install GRUB onto your boot "
+"disk."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:263
+#, no-wrap
+msgid ""
+"**On a BIOS computer**, install the package `grub`, then run `grub-install\n"
+"/dev/sdX`, where `/dev/sdX` is the drive (not partition) that you wish to\n"
+"install GRUB to. For example:\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:268
+msgid "``` (chroot) # xbps-install grub (chroot) # grub-install /dev/sda ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:273
+#, no-wrap
+msgid ""
+"**On a UEFI computer**, install either `grub-x86_64-efi` or `grub-i386-efi`,\n"
+"depending on your architecture, then run `grub-install`, optionally specifying a\n"
+"bootloader label (this label may be used by your computer's firmware when\n"
+"manually selecting a boot device):\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:278
+msgid ""
+"``` (chroot) # xbps-install grub-x86_64-efi (chroot) # grub-install --"
+"target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=\"Void\" ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:281
+msgid ""
+"If installing onto a removable disk (such as USB), add the option `--"
+"removable` to the `grub-install` command."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:283
+msgid "## Finalization"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:286
+msgid ""
+"Use [xbps-reconfigure(1)](https://man.voidlinux.org/xbps-reconfigure.1) to "
+"ensure all installed packages are configured properly:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:290
+msgid "``` (chroot) # xbps-reconfigure -fa ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:293
+msgid ""
+"This will make [dracut(8)](https://man.voidlinux.org/dracut.8) generate an "
+"initramfs, and will make GRUB generate a working configuration."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:296
+msgid ""
+"At this point, the installation is complete. Exit the chroot and reboot your "
+"computer:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:301
+msgid "``` (chroot) # exit # shutdown -r now ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/chroot.md:303
+#: src/installation/live-images/guide.md:135
+msgid ""
+"After booting into your Void installation for the first time, [perform a "
+"system update](../../xbps/index.md#updating)."
+msgstr ""

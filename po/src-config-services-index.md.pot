@@ -1,0 +1,377 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/config/containers-and-vms/index.md:7 src/config/services/index.md:20
+#: src/config/graphical-session/graphics-drivers/index.md:7
+#: src/config/security/index.md:7 src/xbps/troubleshooting/index.md:8
+#: src/installation/guides/index.md:6
+msgid "## Section Contents"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:2
+msgid "# Services and Daemons - runit"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:5
+msgid ""
+"Void uses the [runit(8)](https://man.voidlinux.org/runit.8) supervision "
+"suite to run system services and daemons."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:7
+msgid "Some advantages of using runit include:"
+msgstr ""
+
+#. type: Bullet: '- '
+#: src/config/services/index.md:14
+msgid ""
+"a small code base, making it easier to audit for bugs and security issues."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:14
+#, no-wrap
+msgid ""
+"- each service is given a clean process state, regardless of how the service was\n"
+"   started or restarted: it will be started with the same environment, resource\n"
+"   limits, open file descriptors, and controlling terminals.\n"
+"- a reliable logging facility for services, where the log service stays up as\n"
+"   long as the relevant service is running and possibly writing to the log.\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:18
+msgid ""
+"If you don't need a program to be running constantly, but would like it to "
+"run at regular intervals, you might like to consider using a [cron daemon]"
+"(../cron.md)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:23
+msgid "- [Per-User Services](./user-services.md)  - [Logging](./logging.md)"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:25
+msgid "## Service Directories"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:27
+msgid "Each service managed by runit has an associated *service directory*."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:30
+msgid ""
+"A service directory requires only one file: an executable named `run`, which "
+"is expected to exec a process in the foreground."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:32
+msgid "Optionally, a service directory may contain:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:41
+#, no-wrap
+msgid ""
+"- an executable named `check`, which will be run to check whether the service is\n"
+"   up and available; it's considered available if `check` exits with 0.\n"
+"- an executable named `finish`, which will be run on shutdown/process stop.\n"
+"- a `conf` file; this can contain environment variables to be sourced and\n"
+"   referenced in `run`.\n"
+"- a directory named `log`; a pipe will be opened from the output of the `run`\n"
+"   process in the service directory to the input of the `run` process in the\n"
+"   `log` directory.\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:44
+msgid ""
+"When a new service is created, a `supervise` folder will be automatically "
+"created on the first run."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:46
+msgid "### Configuring Services"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:50
+msgid ""
+"Most services can take configuration options set by a `conf` file in the "
+"service directory. This allows service customization without modifying the "
+"service directory provided by the relevant package."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:53
+msgid ""
+"Check the service file for how to pass configuration parameters. A few "
+"services have a field like `OPTS=\"--value ...\"` in their `conf` file."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:56
+msgid ""
+"To make more complex customizations, you should [edit the service](#editing-"
+"services)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:58
+msgid "### Editing Services"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:64
+msgid ""
+"To edit a service, first copy its service directory to a different directory "
+"name. Otherwise, [xbps-install(1)](https://man.voidlinux.org/xbps-install.1) "
+"can overwrite the service directory. Then, edit the new service file as "
+"needed.  Finally, the old service should be stopped and disabled, and the "
+"new one should be started."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:66
+msgid "## Managing Services"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:68
+msgid "### Runsvdirs"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:72
+msgid ""
+"A **runsvdir** is a directory in `/etc/runit/runsvdir` containing enabled "
+"services in the form of symlinks to service directories. On a running "
+"system, the current runsvdir is accessible via the `/var/service` symlink."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:74
+msgid ""
+"The `runit-void` package comes with two runsvdirs, `single` and `default`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:79
+#, no-wrap
+msgid ""
+"- `single` just runs [sulogin(8)](https://man.voidlinux.org/sulogin.8) and the\n"
+"   necessary steps to rescue your system.\n"
+"- `default` is the default runsvdir on a running system, unless [specified\n"
+"   otherwise by the kernel command line](#booting-a-different-runsvdir).\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:81
+msgid "Additional runsvdirs can be created in `/etc/runit/runsvdir/`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:84
+msgid ""
+"See [runsvdir(8)](https://man.voidlinux.org/runsvdir.8) and [runsvchdir(8)]"
+"(https://man.voidlinux.org/runsvchdir.8) for further information."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:86
+msgid "#### Booting A Different runsvdir"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:90
+msgid ""
+"To boot a runsvdir other than `default`, the name of the desired runsvdir "
+"can be added to the [kernel command-line](../kernel.md#cmdline). As an "
+"example, adding `single` to the kernel command line will boot the `single` "
+"runsvdir."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:92
+msgid "### Basic Usage"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:94
+msgid "To start, stop, restart or get the status of a service:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:101
+msgid ""
+"``` # sv up <services> # sv down <services> # sv restart <services> # sv "
+"status <services> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:103
+msgid "The `<services>` placeholder can be:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:106
+msgid ""
+"- Service names (service directory names) inside the `/var/service/` "
+"directory.  - The full paths to the services."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:109
+msgid ""
+"For example, the following commands show the status of a specific service "
+"and of all enabled services:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:114
+msgid "``` # sv status dhcpcd # sv status /var/service/* ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:116
+msgid "See [sv(8)](https://man.voidlinux.org/sv.8) for further information."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:118
+msgid "#### Enabling Services"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:120
+msgid "Void Linux provides service directories for most daemons in `/etc/sv/`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:123
+msgid ""
+"To enable a service on a booted system, create a symlink to the service "
+"directory in `/var/service/`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:127
+msgid "``` # ln -s /etc/sv/<service> /var/service/ ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:130
+msgid ""
+"If the system is not currently running, the service can be linked directly "
+"into the `default` [runsvdir](#runsvdirs):"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:134
+msgid "``` # ln -s /etc/sv/<service> /etc/runit/runsvdir/default/ ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:137
+msgid ""
+"This will automatically start the service. Once a service is linked it will "
+"always start on boot and restart if it stops, unless administratively downed."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:140
+msgid ""
+"To prevent a service from starting at boot while allowing runit to manage "
+"it, create a file named `down` in its service directory:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:144
+msgid "``` # touch /etc/sv/<service>/down ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:149
+msgid ""
+"The `down` file mechanism also makes it possible to disable services that "
+"are enabled by default, such as the [agetty(8)](https://man.voidlinux.org/"
+"agetty.8)  services for ttys 1 to 6. This way, package updates which affect "
+"these services - in this case, the `runit-void` package - won't re-enable "
+"them."
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:151
+msgid "#### Disabling Services"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:153
+msgid "To disable a service, remove the symlink from the running runsvdir:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:157
+msgid "``` # rm /var/service/<service> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:160
+msgid ""
+"Or, for example, from the `default` runsvdir, if either the specific "
+"runsvdir, or the system, is not currently running:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:164
+msgid "``` # rm /etc/runit/runsvdir/default/<service> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:166
+msgid "#### Testing Services"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:169
+msgid ""
+"To check if a service is working correctly when started by the service "
+"supervisor, run it once before fully enabling it:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:175
+msgid ""
+"``` # touch /etc/sv/<service>/down # ln -s /etc/sv/<service> /var/service/ # "
+"sv once <service> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/services/index.md:176
+msgid "If everything works, remove the `down` file to enable the service."
+msgstr ""

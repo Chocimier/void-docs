@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/config/locales.md:2
+msgid "# Locales and Translations"
+msgstr ""
+
+#. type: Plain text
+#: src/config/locales.md:4
+msgid "For a list of currently enabled locales, run"
+msgstr ""
+
+#. type: Plain text
+#: src/config/locales.md:8
+msgid "``` $ locale -a ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/locales.md:10
+msgid "## Enabling locales"
+msgstr ""
+
+#. type: Plain text
+#: src/config/locales.md:14
+msgid ""
+"To enable a certain locale, un-comment or add the relevant lines in `/etc/"
+"default/libc-locales` and [reconfigure](../xbps/index.md) the `glibc-"
+"locales` package."
+msgstr ""
+
+#. type: Plain text
+#: src/config/locales.md:16
+msgid "## Setting the system locale"
+msgstr ""
+
+#. type: Plain text
+#: src/config/locales.md:18
+msgid "Set `LANG=xxxx` in `/etc/locale.conf`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/locales.md:20
+msgid "## Application locale"
+msgstr ""
+
+#. type: Plain text
+#: src/config/locales.md:30
+msgid ""
+"Some programs have their translations in a separate package that must be "
+"installed in order to use them. You can [search](../xbps/index.md#finding-"
+"files-and-packages) for the desired language (e.g. \"german\" or \"portuguese"
+"\") in the package repositories and install the packages relevant to the "
+"applications you use. An especially relevant case is when installing "
+"individual packages from the LibreOffice suite, such as `libreoffice-"
+"writer`, which require installing at least one of the `libreoffice-i18n-*` "
+"packages to work properly. This isn't necessary when installing the "
+"`libreoffice` meta-package, since doing so will install the most common "
+"translation packages."
+msgstr ""

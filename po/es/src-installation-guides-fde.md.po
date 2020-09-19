@@ -1,0 +1,446 @@
+# Spanish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: Plain text
+#: src/installation/guides/fde.md:2
+msgid "# Full Disk Encryption"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:5
+msgid ""
+"Your drive's block device and other information may be different, so make "
+"sure it is correct."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:7
+msgid "Boot the live image and login."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:11
+msgid ""
+"Create a single physical partition on the disk using `cfdisk`, marking it "
+"bootable. For an MBR system, the partition layout should look like the "
+"following."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:20
+msgid ""
+"``` # fdisk -l /dev/sda Disk /dev/sda: 48 GiB, 51539607552 bytes, 100663296 "
+"sectors Units: sectors of 1 * 512 = 512 bytes Sector size (logical/"
+"physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 "
+"bytes Disklabel type: dos Disk identifier: 0x4d532059"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:24
+#, no-wrap
+msgid ""
+"Device     Boot Start       End   Sectors Size Id Type\n"
+"/dev/sda1  *     2048 100663295 100661248  48G 83 Linux\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:29
+msgid ""
+"UEFI systems will need the disk to have a GPT disklabel and an EFI system "
+"partition. The required size for this may vary depending on needs, but 100M "
+"should be enough for most cases. For an EFI system, the partition layout "
+"should look like the following."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:38
+msgid ""
+"``` # fdisk -l /dev/sda Disk /dev/sda: 48 GiB, 51539607552 bytes, 100663296 "
+"sectors Units: sectors of 1 * 512 = 512 bytes Sector size (logical/"
+"physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 "
+"bytes Disklabel type: gpt Disk identifier: EE4F2A1A-8E7F-48CA-B3D0-"
+"BD7A01F6D8A0"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:43
+#, no-wrap
+msgid ""
+"Device      Start       End   Sectors  Size Type\n"
+"/dev/sda1    2048    264191    262144  128M EFI System\n"
+"/dev/sda2  264192 100663262 100399071 47.9G Linux filesystem\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:47
+msgid ""
+"Configure the encrypted volume. `cryptsetup` defaults to LUKS2, yet GRUB "
+"currently only has support for LUKS1, so it is critical to force LUKS1. Keep "
+"in mind this will be `/dev/sda2` on EFI systems."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:50
+msgid "``` # cryptsetup luksFormat --type luks1 /dev/sda1"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:52
+#, no-wrap
+msgid ""
+"WARNING!\n"
+"========\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:54
+msgid "This will overwrite data on /dev/sda1 irrevocably."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:59
+msgid ""
+"Are you sure? (Type uppercase yes): YES Enter passphrase: Verify passphrase: "
+"```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:62
+msgid ""
+"Once the volume is created, it needs to be opened. Replace voidvm with an "
+"appropriate name. Again, this will be `/dev/sda2` on EFI systems."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:67
+msgid ""
+"``` # cryptsetup luksOpen /dev/sda1 voidvm Enter passphrase for /dev/sda1: "
+"```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:70
+msgid ""
+"Once the LUKS container is opened, create the LVM volume group using that "
+"partition."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:75
+#, no-wrap
+msgid ""
+"```\n"
+"# vgcreate voidvm /dev/mapper/voidvm\n"
+"  Volume group \"voidvm\" successfully created\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:77
+msgid "There should now be an empty volume group named `voidvm`."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:80
+msgid ""
+"Next, logical volumes need to be created for the volume group. For this "
+"example, I chose 10G for `/`, 2G for `swap`, and will assign the rest to `/"
+"home`."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:89
+#, no-wrap
+msgid ""
+"```\n"
+"# lvcreate --name root -L 10G voidvm\n"
+"  Logical volume \"root\" created.\n"
+"# lvcreate --name swap -L 2G voidvm\n"
+"  Logical volume \"swap\" created.\n"
+"# lvcreate --name home -l 100%FREE voidvm\n"
+"  Logical volume \"home\" created.\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:94
+msgid ""
+"Next, create the filesystems. The example below uses XFS as a personal "
+"preference of the author. Any filesystem [supported by GRUB](https://www.gnu."
+"org/software/grub/manual/grub/grub.html#Features) will work."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:105
+#, no-wrap
+msgid ""
+"```\n"
+"# mkfs.xfs -L root /dev/voidvm/root\n"
+"meta-data=/dev/voidvm/root       isize=512    agcount=4, agsize=655360 blks\n"
+"...\n"
+"# mkfs.xfs -L home /dev/voidvm/home\n"
+"meta-data=/dev/voidvm/home       isize=512    agcount=4, agsize=2359040 blks\n"
+"...\n"
+"mkswap /dev/voidvm/swap\n"
+"Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:107
+msgid "Next, setup the chroot and install the base system."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:114
+msgid ""
+"``` # mount /dev/voidvm/root /mnt # for dir in dev proc sys run; do mkdir -"
+"p /mnt/$dir ; mount --rbind /$dir /mnt/$dir ; mount --make-rslave /mnt/"
+"$dir ; done # mkdir -p /mnt/home # mount /dev/voidvm/home /mnt/home ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:116
+msgid "On a UEFI system, the EFI system partition also needs to be mounted."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:122
+msgid ""
+"``` # mkfs.vfat /dev/sda1 # mkdir -p /mnt/boot/efi # mount /dev/sda1 /mnt/"
+"boot/efi ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:124
+msgid ""
+"Before we enter the chroot to finish up configuration, we do the actual "
+"install."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:128
+msgid ""
+"`xbps-install` might ask you to [verify the RSA keys](../../xbps/index."
+"md#verifying-rsa-keys) for the packages you are installing."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:139
+msgid ""
+"``` # xbps-install -Sy -R https://alpha.de.repo.voidlinux.org/current -r /"
+"mnt base-system lvm2 cryptsetup grub [*] Updating `https://alpha.de.repo."
+"voidlinux.org/current/x86_64-repodata' ...  x86_64-repodata: 1661KB [avg "
+"rate: 2257KB/s] `https://alpha.de.repo.voidlinux.org/current' repository has "
+"been RSA signed by \"Void Linux\" Fingerprint: 60:ae:0c:d6:f0:95:17:80:"
+"bc:93:46:7a:89:af:a3:2d Do you want to import this public key? [Y/n] y 130 "
+"packages will be downloaded: ...  ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:142
+msgid ""
+"UEFI systems will have a slightly different package selection. The "
+"installation command for a UEFI system will be as follows."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:146
+msgid ""
+"``` # xbps-install -Sy -R https://alpha.de.repo.voidlinux.org/current -r /"
+"mnt base-system cryptsetup grub-x86_64-efi lvm2 ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:148
+msgid ""
+"When it's done, we can enter the `chroot` and finish up the configuration."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:159
+msgid ""
+"``` # chroot /mnt # chown root:root / # chmod 755 / # passwd root # echo "
+"voidvm > /etc/hostname # echo \"LANG=en_US.UTF-8\" > /etc/locale.conf # echo "
+"\"en_US.UTF-8 UTF-8\" >> /etc/default/libc-locales # xbps-reconfigure -f "
+"glibc-locales ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:162
+msgid ""
+"The next step is editing `/etc/fstab`, which will depend on how you "
+"configured and named your filesystems. For this example, the file should "
+"look like this:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:170
+#, no-wrap
+msgid ""
+"```\n"
+"# <file system>\t   <dir> <type>  <options>             <dump>  <pass>\n"
+"tmpfs             /tmp  tmpfs   defaults,nosuid,nodev 0       0\n"
+"/dev/voidvm/root  /     xfs     defaults              0       0\n"
+"/dev/voidvm/home  /home xfs     defaults              0       0\n"
+"/dev/voidvm/swap  swap  swap    defaults              0       0\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:172
+msgid "UEFI systems will also have an entry for the EFI system partition."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:176
+msgid "``` /dev/sda1\t/boot/efi\tvfat\tdefaults\t0\t0 ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:179
+msgid ""
+"Next, configure GRUB to be able to unlock the filesystem. Add the following "
+"line to `/etc/default/grub`:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:183
+msgid "``` GRUB_ENABLE_CRYPTODISK=y ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:186
+msgid ""
+"Next, the kernel needs to be configured to find the encrypted device. First, "
+"find the UUID of the device."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:191
+msgid ""
+"``` # blkid -o value -s UUID /dev/sda1 135f3c06-26a0-437f-a05e-287b036440a4 "
+"```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:196
+msgid ""
+"Edit the `GRUB_CMDLINE_LINUX_DEFAULT=` line in `/etc/default/grub` and add "
+"`rd.lvm.vg=voidvm rd.luks.uuid=<UUID>` to it. Make sure the UUID matches the "
+"one for the `sda1` device found in the output of the [blkid(8)](https://man."
+"voidlinux.org/blkid.8) command above."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:200
+msgid ""
+"And now to avoid having to enter the password twice on boot, a key will be "
+"configured to automatically unlock the encrypted volume on boot. First, "
+"generate a random key."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:207
+msgid ""
+"``` # dd bs=1 count=64 if=/dev/urandom of=/boot/volume.key 64+0 records in "
+"64+0 records out 64 bytes copied, 0.000662757 s, 96.6 kB/s ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:209
+msgid "Next, add the key to the encrypted volume."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:214
+msgid ""
+"``` # cryptsetup luksAddKey /dev/sda1 /boot/volume.key Enter any existing "
+"passphrase: ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:216
+msgid "Change the permissions to protect generated the key."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:221
+msgid "``` # chmod 000 /boot/volume.key # chmod -R g-rwx,o-rwx /boot ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:224
+msgid ""
+"This keyfile also needs to be added to `/etc/crypttab`. Again, this will be "
+"`/dev/sda2` on EFI systems."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:228
+#, no-wrap
+msgid ""
+"```\n"
+"voidvm   /dev/sda1   /boot/volume.key   luks\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:231
+msgid ""
+"And then the keyfile and `crypttab` need to be included in the initramfs. "
+"Create a new file at `/etc/dracut.conf.d/10-crypt.conf` with the following "
+"line:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:235
+msgid "``` install_items+=\" /boot/volume.key /etc/crypttab \" ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:237
+msgid "Next, install the boot loader to the disk."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:241
+msgid "``` # grub-install /dev/sda ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:243
+msgid "Ensure an initramfs is generated:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:247
+msgid "``` # xbps-reconfigure -fa ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:249
+msgid "Exit the `chroot`, unmount the filesystems, and reboot the system."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/fde.md:254
+msgid "``` # exit # umount -R /mnt # reboot ```"
+msgstr ""

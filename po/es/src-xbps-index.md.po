@@ -1,0 +1,247 @@
+# Spanish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: Plain text
+#: src/xbps/index.md:2
+msgid "# XBPS Package Manager"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:6
+msgid ""
+"The X Binary Package System (XBPS) is a fast package manager that has been "
+"designed and implemented from scratch. XBPS is managed by the Void Linux "
+"team and developed at <https://github.com/void-linux/xbps>."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:8
+msgid "Most general package management is done with the following commands:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:29
+#, no-wrap
+msgid ""
+"- [xbps-query(1)](https://man.voidlinux.org/xbps-query.1) searches for and\n"
+"   displays information about packages installed locally, or, if used with the\n"
+"   `-R` flag, packages contained in repositories.\n"
+"- [xbps-install(1)](https://man.voidlinux.org/xbps-install.1) installs and\n"
+"   updates packages, and syncs repository indexes.\n"
+"- [xbps-remove(1)](https://man.voidlinux.org/xbps-remove.1) removes installed\n"
+"   packages, and can also remove orphaned packages and cached package files.\n"
+"- [xbps-reconfigure(1)](https://man.voidlinux.org/xbps-reconfigure.1) runs the\n"
+"   configuration steps for installed packages, and can be used to reconfigure\n"
+"   certain packages after changes in their configuration files. The latter\n"
+"   usually requires the `--force` flag.\n"
+"- [xbps-alternatives(1)](https://man.voidlinux.org/xbps-alternatives.1) lists or\n"
+"   sets the alternatives provided by installed packages. Alternatives is a\n"
+"   system which allows multiple packages to provide common functionality through\n"
+"   otherwise conflicting files, by creating symlinks from the common paths to\n"
+"   package-specific versions that are selected by the user.\n"
+"- [xbps-pkgdb(1)](https://man.voidlinux.org/xbps-pkgdb.1) can report and fix\n"
+"   issues in the package database, as well as modify it.\n"
+"- [xbps-rindex(1)](https://man.voidlinux.org/xbps-rindex.1) manages local binary\n"
+"   package repositories.\n"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:32
+msgid ""
+"Most questions can be answered by consulting the man pages for these tools, "
+"together with the [xbps.d(5)](https://man.voidlinux.org/xbps.d.5) man page."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:36
+msgid ""
+"To learn how to build packages from source, refer to [the README for the "
+"void-packages repository](https://github.com/void-linux/void-packages/blob/"
+"master/README.md)."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:38
+msgid "## Updating"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:41
+msgid ""
+"Like any other system, it is important to keep Void up-to-date. Use [xbps-"
+"install(1)](https://man.voidlinux.org/xbps-install.1) to update:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:45
+msgid "``` # xbps-install -Su ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:49
+msgid ""
+"XBPS must use a separate transaction to update itself. If your update "
+"includes the `xbps` package, you will need to run the above command a second "
+"time to apply the rest of the updates."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:51
+msgid "### Restarting Services"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:55
+msgid ""
+"XBPS does not restart services when they are updated. This task is left to "
+"the administrator, so they can orchestrate maintenance windows, ensure "
+"reasonable backup capacity, and generally be present for service upgrades."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:58
+msgid ""
+"To find processes running different versions than are present on disk, use "
+"the `xcheckrestart` tool provided by the `xtools` package:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:63
+msgid ""
+"``` $ xcheckrestart 11339 /opt/google/chrome/chrome (deleted) (google-"
+"chrome)  ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:66
+msgid ""
+"`xcheckrestart` will print out the PID, path to the executable, status of "
+"the path that was launched (almost always `deleted`) and the process name."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:68
+msgid "`xcheckrestart` can and should be run as an unprivileged user."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:70
+msgid "### Kernel Panic After Update"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:74
+msgid ""
+"If you get a kernel panic after an update, it is likely your system ran out "
+"of space in `/boot`. Refer to \"[Removing old kernels](../config/kernel."
+"md#removing-old-kernels)\" for further information."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:76
+msgid "## Finding Files and Packages"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:79
+msgid ""
+"To search available repositories for packages, use [xbps-query(1)](https://"
+"man.voidlinux.org/xbps-query.1):"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:83
+msgid "``` $ xbps-query -Rs <search_pattern> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:86
+msgid ""
+"The `-R` flag specifies that repositories should be searched. Without it, `-"
+"s` searches for locally-installed packages."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:90
+msgid ""
+"If you can't find a file or program you expected to find after installing a "
+"package, you can use [xbps-query(1)](https://man.voidlinux.org/xbps-query.1) "
+"to list the files provided by that package:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:94
+msgid "``` $ xbps-query -f <package_name> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:99
+msgid ""
+"The `xtools` package contains the [xlocate(1)](https://man.voidlinux.org/"
+"xlocate.1) utility. `xlocate` works like [locate(1)](https://man.voidlinux."
+"org/locate.1), but for files in the Void package repositories:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:109
+#, no-wrap
+msgid ""
+"```\n"
+"$ xlocate -S\n"
+"Fetching objects: 11688, done.\n"
+"From https://alpha.de.repo.voidlinux.org/xlocate/xlocate\n"
+" + e122c3634...a2659176f master     -> master  (forced update)\n"
+"$ xlocate xlocate\n"
+"xtools-0.59_1   /usr/bin/xlocate\n"
+"xtools-0.59_1   /usr/share/man/man1/xlocate.1 -> /usr/share/man/man1/xtools.1\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:113
+msgid ""
+"It is also possible to use [xbps-query(1)](https://man.voidlinux.org/xbps-"
+"query.1) to find files, though this is strongly discouraged:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:118
+msgid ""
+"``` $ xbps-query -Ro /usr/bin/xlocate xtools-0.46_1: /usr/bin/xlocate "
+"(regular file)  ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:122
+msgid ""
+"This requires `xbps-query` to download parts of every package to find the "
+"file.  `xlocate`, however, queries a locally cached index of all files, so "
+"no network access is required."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:124
+msgid "To get a list of all installed packages, without their version:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/index.md:127
+msgid ""
+"``` $ xbps-query -l | awk '{ print $2 }' | xargs -n1 xbps-uhelper getpkgname "
+"```"
+msgstr ""

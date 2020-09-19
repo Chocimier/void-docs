@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/config/network/iwd.md:7 src/config/bluetooth.md:18
+#: src/config/graphical-session/kde.md:4 src/config/graphical-session/xorg.md:9
+#: src/config/graphical-session/wayland.md:7
+#: src/config/graphical-session/gnome.md:9
+#: src/installation/guides/arm-devices/index.md:23
+msgid "## Installation"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/gnome.md:2
+msgid "# GNOME"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/gnome.md:4
+msgid "## Pre-installation"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/gnome.md:7
+msgid ""
+"Install the `dbus` package, ensure the `dbus` service is enabled, and reboot "
+"for the changes to take effect."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/gnome.md:12
+msgid ""
+"Install the `gnome` package for a GNOME environment which includes GNOME "
+"applications."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/gnome.md:16
+msgid ""
+"A minimal GNOME environment can be created by installing the `mesa-dri`, "
+"`gnome-session`, `gdm` and `adwaita-icon-theme` packages. (Note, however, "
+"that not all GNOME features may be present or functional.)"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/gnome.md:21
+msgid ""
+"The `gdm` package provides the `gdm` service for the GNOME Display Manager; "
+"[test the service](../services/index.md#testing-services) before enabling "
+"it.  GDM defaults to providing a Wayland session via the `mutter` window "
+"manager, but an X session can be chosen instead."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/gnome.md:24
+msgid ""
+"If you wish to start an X-based GNOME session from the console, use [startx]"
+"(./xorg.md#startx) to run `gnome-session`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/gnome.md:26
+msgid "GNOME applications can be installed via the `gnome-apps` package."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/gnome.md:28
+msgid ""
+"If you require [ZeroConf](http://www.zeroconf.org/) support, install the "
+"`avahi` package and enable the `avahi-daemon` service."
+msgstr ""

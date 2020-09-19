@@ -1,0 +1,51 @@
+# Polish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#. type: Plain text
+#: src/config/graphical-session/index.md:2
+msgid "# Graphical Session"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/index.md:4
+msgid "In order to configure a graphical session, you need:"
+msgstr ""
+
+#. type: Bullet: '- '
+#: src/config/graphical-session/index.md:8
+msgid "[Graphics drivers](./graphics-drivers/index.md)"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/index.md:8
+#, no-wrap
+msgid ""
+"- A basis for your graphical session: [Xorg](./xorg.md) or\n"
+"   [Wayland](./wayland.md)\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/index.md:10
+msgid "You may also need:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/index.md:11
+msgid "- [Session management tools](../session-management.md)"
+msgstr ""

@@ -1,0 +1,299 @@
+# Spanish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: Plain text
+#: src/config/services/user-services.md:15 src/config/ssd.md:32
+msgid "``` #!/bin/sh"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:2
+msgid "# Solid State Drives"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:5
+msgid ""
+"Post installation, you will need to enable TRIM for solid state drives. You "
+"can check which devices allow TRIM by running:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:9
+msgid "``` $ lsblk --discard ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:15
+msgid ""
+"If the DISC-GRAN (discard granularity) and DISC-MAX (discard maximum bytes)  "
+"columns are non-zero, that means the block device has TRIM support. If your "
+"solid state drive partition does not show TRIM support, please verify that "
+"you chose a file system with TRIM support (ext4, Btrfs, F2FS, etc.). Note "
+"that F2FS requires kernel 4.19 or above to support TRIM."
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:19
+msgid ""
+"To run TRIM one-shot, you can run [`fstrim(8)`](https://man.voidlinux.org/"
+"fstrim.8) manually. For example, if your / directory is on an SSD:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:23
+msgid "``` # fstrim / ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:25
+msgid ""
+"To automate running TRIM, use cron or add the `discard` option to `/etc/"
+"fstab`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:27
+msgid "## Periodic TRIM with cron"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:29
+msgid "Add the following lines to `/etc/cron.daily/fstrim`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:35
+msgid "fstrim / ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:37 src/config/ssd.md:136
+msgid "Finally, make the script executable:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:41
+msgid "``` # chmod u+x /etc/cron.daily/fstrim ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:43
+msgid "## Continuous TRIM with fstab discard"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:48
+msgid ""
+"You can use either continuous or periodic TRIM, but usage of continuous TRIM "
+"is discouraged if you have an SSD that doesn't handle NCQ correctly. Refer "
+"to the kernel [blacklist](https://git.kernel.org/pub/scm/linux/kernel/git/"
+"torvalds/linux.git/tree/drivers/ata/libata-core.c?"
+"h=v5.8&id=bcf876870b95592b52519ed4aafcf9d95999bc9c#n3774)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:50
+msgid ""
+"Edit `/etc/fstab` and add the `discard` option to block devices that need "
+"TRIM."
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:53
+msgid ""
+"For example, if `/dev/sda1` was an SSD partition, formatted as ext4, and "
+"mounted at `/`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:57
+#, no-wrap
+msgid ""
+"```\n"
+"/dev/sda1  /           ext4  defaults,discard   0  1\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:59
+msgid "## LVM"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:62
+msgid ""
+"To enable TRIM for LVM's commands (`lvremove`, `lvreduce`, etc.), open `/etc/"
+"lvm/lvm.conf`, uncomment the `issue_discards` option, and set it to `1`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:66
+msgid "``` issue_discards=1 ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:68
+msgid "## LUKS"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:72
+#, no-wrap
+msgid ""
+"**Warning**: Before enabling discard for your LUKS partition, please be aware of\n"
+"the [security\n"
+"implications](https://wiki.archlinux.org/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD)).\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:75
+msgid ""
+"To open an encrypted LUKS device and allow discards to pass through, open "
+"the device with the `--allow-discards` option:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:79
+msgid "``` # cryptsetup luksOpen --allow-discards /dev/sdaX luks ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:81
+msgid "### Non-root devices"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:85
+msgid ""
+"Edit `/etc/crypttab` and set the `discard` option for devices on the SSD. "
+"For example, if you have a LUKS device with the name `externaldrive1`, "
+"device `/dev/sdb2`, and password `none`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:89
+#, no-wrap
+msgid ""
+"```\n"
+"externaldrive1  /dev/sdb2   none    luks,discard\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:91
+msgid "### Root devices"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:94
+msgid ""
+"If your root device is on LUKS, add `rd.luks.allow-discards` to "
+"`CMDLINE_LINUX_DEFAULT`. In the case of GRUB, edit `/etc/default/grub`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:98
+msgid "``` GRUB_CMDLINE_LINUX_DEFAULT=\"rd.luks.allow-discards\" ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:100
+msgid "### Verifying configuration"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:102
+msgid "To verify that you have configured TRIM correctly for LUKS, run:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:106
+msgid "``` # dmsetup table /dev/mapper/crypt_dev --showkeys ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:109
+msgid ""
+"If this command output contains the string `allow_discards`, you have "
+"successfully enabled TRIM on your LUKS device."
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:111
+msgid "## ZFS"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:114
+msgid ""
+"Before running `trim` on a ZFS pool, ensure that all devices in the pool "
+"support it:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:118
+msgid "``` # zpool get all | grep trim ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:121
+msgid ""
+"If the pool allows `autotrim` (set `off` by default), you can `trim` the "
+"pool periodically or automatically. To one-shot `trim` `yourpoolname`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:125
+msgid "``` # zpool trim yourpoolname ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:127
+msgid "### Periodic TRIM"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:129
+msgid "Add the following lines to `/etc/cron.daily/ztrim`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:134
+msgid "``` #!/bin/sh zpool trim yourpoolname ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:140
+msgid "``` # chmod u+x /etc/cron.daily/ztrim ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:142
+msgid "### Autotrim"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:144
+msgid "To set autotrim for `yourpoolname`, run:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/ssd.md:147
+msgid "``` # zpool set autotrim=on yourpoolname ```"
+msgstr ""

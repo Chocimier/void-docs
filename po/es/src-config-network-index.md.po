@@ -1,0 +1,135 @@
+# Spanish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: Plain text
+#: src/config/network/index.md:2
+msgid "# Network"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:6
+msgid ""
+"Network configuration in Void Linux can be done in several ways. The default "
+"installation comes with the [dhcpcd(8)](https://man.voidlinux.org/dhcpcd.8)  "
+"service enabled."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:8
+msgid "## Interface Names"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:11
+msgid ""
+"Newer versions of [udev(7)](https://man.voidlinux.org/udev.7) no longer use "
+"the traditional Linux naming scheme for interfaces (`eth0`, `eth0`, "
+"`wlan0`, ...)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:14
+msgid ""
+"This behavior can be reverted by adding `net.ifnames=0` to the [kernel "
+"cmdline](../kernel.md#cmdline)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:16
+msgid "## Static Configuration"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:19
+msgid ""
+"A simple way to configure a static network at boot is to add the necessary "
+"[ip(8)](https://man.voidlinux.org/ip.8) commands to the `/etc/rc.local` file:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:25
+msgid ""
+"``` ip link set dev eth0 up ip addr add 192.168.1.2/24 brd + dev eth0 ip "
+"route add default via 192.168.1.1 ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:27
+msgid "## dhcpcd"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:30
+msgid ""
+"To run [dhcpcd(8)](https://man.voidlinux.org/dhcpcd.8) on all interfaces, "
+"enable the `dhcpcd` service."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:33
+msgid ""
+"To run `dhcpcd` only on a specific interface, copy the `dhcpcd-eth0` service "
+"and modify it to match your interface:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:44
+#, no-wrap
+msgid ""
+"```\n"
+"$ ip link show\n"
+"1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1\n"
+"    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00\n"
+"2: enp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000\n"
+"        link/ether ff:ff:ff:ff:ff:ff brd ff:ff:ff:f\n"
+"# cp -R /etc/sv/dhcpcd-eth0 /etc/sv/dhcpcd-enp3s0\n"
+"# sed -i 's/eth0/enp3s0/' /etc/sv/dhcpcd-enp3s0/run\n"
+"# ln -s /etc/sv/dhcpcd-enp3s0 /var/service/\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:47
+msgid ""
+"For more information on configuring `dhcpcd`, refer to [dhcpcd.conf(5)]"
+"(https://man.voidlinux.org/dhcpcd.conf.5)"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:49
+msgid "## Wireless"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:53
+msgid ""
+"Before using wireless networking, use [rfkill(8)](https://man.voidlinux.org/"
+"rfkill.8) to check whether the relevant interfaces are soft- or hard-blocked."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:55
+msgid "Void provides several ways to connect to wireless networks:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/index.md:59
+msgid ""
+"- [wpa_supplicant](./wpa_supplicant.md)  - [iwd](./iwd.md)  - "
+"[NetworkManager](./networkmanager.md)  - [ConnMan](./connman.md)"
+msgstr ""

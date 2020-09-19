@@ -1,0 +1,341 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:44+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/config/kernel.md:2
+msgid "# Kernel"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:4
+msgid "## Kernel series"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:8
+msgid ""
+"Void Linux provides many kernel series in the default repository. These are "
+"named `linux<x>.<y>`: for example, `linux4.19`. You can query for all "
+"available kernel series by running:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:12
+msgid "``` $ xbps-query --regex -Rs '^linux[0-9.]+-[0-9._]+' ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:22
+msgid ""
+"The `linux` meta package, installed by default, depends on one of the kernel "
+"packages, usually the package containing the latest mainline kernel that "
+"works with all DKMS modules. Newer kernels might be available in the "
+"repository, but are not necessarily considered stable enough to be the "
+"default; use these at your own risk. If you wish to use a more recent kernel "
+"and have DKMS modules that you need to build, install the relevant `linux<x>."
+"<y>-headers` package, then use [xbps-reconfigure(1)](https://man.voidlinux."
+"org/xbps-reconfigure.1) to reconfigure the `linux<x>.<y>` package you "
+"installed. This will build the DKMS modules."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:24
+msgid "## Removing old kernels"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:32
+msgid ""
+"When updating the kernel, old versions are left behind in case it is "
+"necessary to roll back to an older version. Over time, old kernel versions "
+"can accumulate, consuming disk space and increasing the time taken by DKMS "
+"module updates.  Furthermore, if `/boot` is a separate partition and fills "
+"up with old kernels, updating can fail or result in incomplete initramfs "
+"filesystems to be generated and result in kernel panics if they are being "
+"booted. Thus, it may be advisable to clean old kernels from time to time."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:38
+msgid ""
+"Removing old kernels is done using the [vkpurge(8)](https://man.voidlinux."
+"org/vkpurge.8) utility. `vkpurge` comes pre-installed on every Void Linux "
+"system. This utility runs the necessary [hooks](#kernel-hooks) when removing "
+"old kernels. Note that `vkpurge` does not remove kernel *packages*, only "
+"particular *kernels*."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:40
+msgid "## Removing the default kernel series"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:48
+msgid ""
+"If you've installed a kernel package for a series other than the default, "
+"and want to remove the default kernel packages, use [xbps.d(5)](https://man."
+"voidlinux.org/xbps.d.5) `ignorepkg` entries to [ignore](../xbps/advanced-"
+"usage.md#ignoring-packages) the relevant `linux<x>.<y>` and `linux<x>.<y>-"
+"headers` packages. After adding these entries, you will be able to remove "
+"the packages with [xbps-remove(1)](https://man.voidlinux.org/xbps-remove.1)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:50
+msgid "## Kernel modules"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:52
+msgid "Kernel modules are typically drivers for devices or filesystems."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:54
+msgid "### Loading kernel modules during boot"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:57
+msgid ""
+"Normally the kernel automatically loads required modules, but sometimes it "
+"may be necessary to explicitly specify modules to be loaded during boot."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:60
+msgid ""
+"To load kernel modules during boot, a `.conf` file like `/etc/modules-load.d/"
+"virtio.conf` needs to be created with the contents:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:65
+msgid "``` # load virtio-net virtio-net ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:67
+msgid "### Blacklisting kernel modules"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:73
+msgid ""
+"Blacklisting kernel modules is a method for preventing modules from being "
+"loaded by the kernel. There are two different methods for blacklisting "
+"kernel modules, one for modules loaded by the initramfs and one for modules "
+"loaded after the initramfs process is done. Modules loaded by the initramfs "
+"have to be blacklisted in the initramfs configuration."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:76
+msgid ""
+"To blacklist modules loaded after the initramfs process, create a `.conf` "
+"file, like `/etc/modprobe.d/radeon.conf`, with the contents:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:80 src/config/kernel.md:105
+msgid "``` blacklist radeon ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:82
+msgid "#### Blacklisting modules in the initramfs"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:86
+msgid ""
+"After making the necessary changes to the configuration files, the initramfs "
+"needs to be [regenerated](#kernel-hooks) for the changes to take effect on "
+"the next boot."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:88
+msgid "##### dracut"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:92
+msgid ""
+"Dracut can be configured to not include kernel modules through a "
+"configuration file. To blacklist modules from being included in a dracut "
+"initramfs, create a `.conf` file, like `/etc/dracut.conf.d/radeon.conf`, "
+"with the contents:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:96
+msgid "``` omit_drivers+=\" radeon \" ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:98
+msgid "##### mkinitcpio"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:101
+msgid ""
+"To blacklist modules from being included in a mkinitcpio initramfs a `.conf` "
+"file needs to be created like `/etc/modprobe.d/radeon.conf` with the "
+"contents:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:107
+msgid "## Kernel hooks"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:110
+msgid ""
+"Void Linux provides directories for kernel hooks in `/etc/kernel.d/{pre-"
+"install,post-install,pre-remove,post-remove}`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:113
+msgid ""
+"These hooks are used to update the boot menus for bootloaders like `grub`, "
+"`gummiboot` and `lilo`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:115
+msgid "### Install hooks"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:121
+msgid ""
+"The `{pre,post}-install` hooks are executed by [xbps-reconfigure(1)](https://"
+"man.voidlinux.org/xbps-reconfigure.1) when configuring a Linux kernel, such "
+"as building its initramfs. This happens when a kernel series is installed "
+"for the first time or updated, but can also be run manually:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:125
+msgid "``` # xbps-reconfigure --force linux<x>.<y> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:128
+msgid ""
+"If run manually, they serve to apply initramfs configuration changes to the "
+"next boot."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:130
+msgid "### Remove hooks"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:133
+msgid ""
+"The `{pre,post}-remove` hooks are executed by [vkpurge(8)](https://man."
+"voidlinux.org/vkpurge.8) when removing old kernels."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:135
+msgid "## Dynamic Kernel Module Support (DKMS)"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:140
+msgid ""
+"There are kernel modules that are not part of the Linux source tree that are "
+"built at install time using DKMS and [kernel hooks](#kernel-hooks). The "
+"available modules can be listed by searching for `dkms` in the package "
+"repositories."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:142
+msgid "DKMS build logs are available in `/var/lib/dkms/`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:144
+msgid "## cmdline"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:152
+msgid ""
+"The kernel, the initial RAM disk (initrd) and some system programs can be "
+"configured at boot by kernel command line arguments. The parameters "
+"understood by the kernel are explained in the [kernel-parameters "
+"documentation](https://www.kernel.org/doc/html/latest/admin-guide/kernel-"
+"parameters.html)  and by [bootparam(7)](https://man.voidlinux.org/"
+"bootparam.7). Parameters understood by dracut can be found in [dracut."
+"cmdline(7)](https://man.voidlinux.org/dracut.cmdline.7)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:158
+msgid ""
+"Once the system is booted, the current kernel command line parameters can be "
+"found in the `/proc/cmdline` file. Some system programs can change their "
+"behavior based on the parameters passed in the command line, which is what "
+"happens when [booting a different runsvdir](./services/index.md#booting-a-"
+"different-runsvdir), for example."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:161
+msgid ""
+"There are different ways of setting these parameters, some of which are "
+"explained below."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:163
+msgid "### GRUB"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:167
+msgid ""
+"Kernel command line arguments can be added through the GRUB bootloader by "
+"editing `/etc/default/grub`, changing the `GRUB_CMDLINE_LINUX_DEFAULT` "
+"variable and then running `update-grub`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:169
+msgid "### dracut"
+msgstr ""
+
+#. type: Plain text
+#: src/config/kernel.md:174
+msgid ""
+"Dracut can be configured to add additional command line arguments to the "
+"kernel through a configuration file. The documentation for dracut's "
+"configuration files can be found in [dracut.conf(5)](https://man.voidlinux."
+"org/dracut.conf.5). To apply these changes, it is necessary to [regenerate]"
+"(#kernel-hooks) the initramfs."
+msgstr ""

@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/config/network/iwd.md:22 src/config/media/alsa.md:17
+#: src/config/media/sndio.md:7 src/config/bluetooth.md:37
+#: src/config/graphical-session/wayland.md:75
+#: src/installation/guides/arm-devices/index.md:114
+#: src/installation/guides/chroot.md:130
+msgid "## Configuration"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:2
+msgid "# sndio"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:5
+msgid ""
+"Install the `sndio` package and enable the [sndiod(8)](https://man.voidlinux."
+"org/sndiod.8) service."
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:11
+msgid ""
+"The service can be configured by adding [sndiod(8)](https://man.voidlinux."
+"org/sndiod.8) flags to the `OPTS` variable in the service configuration file "
+"(`/etc/sv/sndiod/conf`)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:13
+msgid "### Default device"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:17
+msgid ""
+"[sndiod(8)](https://man.voidlinux.org/sndiod.8) uses the first ALSA device "
+"by default. To use another ALSA device for sndio's default device `snd/0` "
+"add the flags to use specific devices to the service configuration file."
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:21
+msgid "``` # echo 'OPTS=\"-f rsnd/Speaker\"' >/etc/sv/sndiod/conf ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:24
+msgid ""
+"Use the `-f` flag to chooses a device by its ALSA device index or its ALSA "
+"device name."
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:26
+msgid "## Volume control"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:29
+msgid ""
+"The master and per application volume controls are controlled with MIDI "
+"messages by hardware or software."
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:34
+msgid ""
+"[aucatctl(1)](https://man.voidlinux.org/aucatctl.1) is a tool specific to "
+"sndio to send MIDI control messages to the [sndiod(8)](https://man.voidlinux."
+"org/sndiod.8) daemon. It can be found in the `aucatctl` package."
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:36
+msgid "## Application specific configurations"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:38
+msgid "### Firefox"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:41
+msgid ""
+"Firefox is built with sndio support and should work out of the box since "
+"version 71 if libsndio is installed and the `snd/0` device is available."
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:44
+msgid ""
+"The following `about:config` changes are required for versions prior to 71 "
+"and should be removed when using version 71 or later:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:51
+msgid ""
+"``` media.cubeb.backend;sndio media.cubeb.sandbox;false security.sandbox."
+"content.read_path_whitelist;/home/<username>/.sndio/cookie security.sandbox."
+"content.write_path_whitelist;/home/<username>/.sndio/cookie ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:53
+msgid "### mpv"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:58
+msgid ""
+"MPV comes with sndio support, but to prevent it from using ALSA over sndio "
+"if the ALSA device is available, set the `--ao=sndio` command line option. "
+"You can also add the option to mpv's configuration file: `~/.config/mpv/mpv."
+"conf` should contain a line specifying `ao=sndio`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:60
+msgid "### OpenAL"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:64
+msgid ""
+"libopenal comes with sndio support, but prioritizes ALSA over sndio by "
+"default.  You can configure this behavior per user in `~/.alsoftrc` or "
+"system wide in `/etc/openal/alsoft.conf` by adding the following lines:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:69
+msgid "``` [general] drivers = sndio ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:71
+msgid "### ALSA"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:77
+msgid ""
+"Applications that only have an ALSA backend can still use sndio with the "
+"`alsa-sndio` package. It contains an ALSA plugin that provides a pcm that "
+"connects to a `sndiod` server, and currently only supports playback. In "
+"order to enable the pcm, add the lines below to your [ALSA configuration "
+"file](./alsa.md#configuration):"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/sndio.md:82
+#, no-wrap
+msgid ""
+"```\n"
+"pcm.!default {\n"
+"\ttype sndio\n"
+"}\n"
+"```\n"
+msgstr ""

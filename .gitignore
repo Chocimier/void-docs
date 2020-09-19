@@ -1,5 +1,7 @@
 book/
 mandoc/
+languages/
 res/void-docs
 res/void-docs.1
 res/handbook-cover.png
+po4a.cfg

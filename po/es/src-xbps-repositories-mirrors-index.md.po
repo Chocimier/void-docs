@@ -1,0 +1,160 @@
+# Spanish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:2
+msgid "# Mirrors"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:6
+msgid ""
+"Void Linux maintains mirrors in several geographic regions for you to use. A "
+"fresh install will default to using the master mirror in Europe, but you may "
+"also [select a different mirror](./changing.md) manually."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:8
+msgid "## Tier 1 mirrors"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:12
+msgid ""
+"Tier 1 mirrors are maintained by the Void Linux Infrastructure Team. These "
+"mirrors sync directly from the build-master and will always have the latest "
+"packages available."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:19
+#, no-wrap
+msgid ""
+"| Repository                                     | Location         |\n"
+"|------------------------------------------------|------------------|\n"
+"| <https://alpha.de.repo.voidlinux.org/>         | EU: Finland      |\n"
+"| <https://mirrors.servercentral.com/voidlinux/> | USA: Chicago     |\n"
+"| <https://alpha.us.repo.voidlinux.org/>         | USA: Kansas City |\n"
+"| <https://mirror.clarkson.edu/voidlinux/>       | USA: New York    |\n"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:21
+msgid "## Tier 2 mirrors"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:26
+msgid ""
+"Tier 2 mirrors sync from a nearby Tier 1 mirror when possible. These mirrors "
+"are not managed by Void and do not have any guarantees of freshness or "
+"completeness of packages, nor are they required to sync every available "
+"architecture or sub-repository."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:28
+msgid "### Globally-available mirrors"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:51
+#, no-wrap
+msgid ""
+"| Repository                                         | Location          |\n"
+"|----------------------------------------------------|-------------------|\n"
+"| <https://mirror.ps.kz/voidlinux/>                  | Asia: Almaty, KZ  |\n"
+"| <https://mirrors.bfsu.edu.cn/voidlinux/>           | Asia: China       |\n"
+"| <https://mirrors.cnnic.cn/voidlinux/>              | Asia: China       |\n"
+"| <https://mirrors.tuna.tsinghua.edu.cn/voidlinux/>  | Asia: China       |\n"
+"| <https://mirror.maakpain.kro.kr/void/>             | Asia: Seoul, SK   |\n"
+"| <https://void.webconverger.org/>                   | Asia: Singapore   |\n"
+"| <https://mirror.aarnet.edu.au/pub/voidlinux/>      | AU: Canberra      |\n"
+"| <https://ftp.swin.edu.au/voidlinux/>               | AU: Melbourne     |\n"
+"| <https://void.cijber.net/>                         | EU: Amsterdam, NL |\n"
+"| <http://ftp.dk.xemacs.org/voidlinux/>              | EU: Denmark       |\n"
+"| <https://mirrors.dotsrc.org/voidlinux/>            | EU: Denmark       |\n"
+"| <https://quantum-mirror.hu/mirrors/pub/voidlinux/> | EU: Hungary       |\n"
+"| <https://mirror.i-novus.ru/mirrors/voidlinux/>     | EU: Ireland       |\n"
+"| <http://ftp.debian.ru/mirrors/voidlinux/>          | EU: Russia        |\n"
+"| <https://mirror.yandex.ru/mirrors/voidlinux/>      | EU: Russia        |\n"
+"| <https://cdimage.debian.org/mirror/voidlinux/>     | EU: Sweden        |\n"
+"| <https://ftp.acc.umu.se/mirror/voidlinux/>         | EU: Sweden        |\n"
+"| <https://ftp.gnome.org/mirror/voidlinux/>          | EU: Sweden        |\n"
+"| <https://ftp.lysator.liu.se/pub/voidlinux/>        | EU: Sweden        |\n"
+"| <https://ftp.sunet.se/mirror/voidlinux/>           | EU: Sweden        |\n"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:53
+msgid "### Region-locked mirrors"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:57
+#, no-wrap
+msgid ""
+"| Repository                                    | Location    |\n"
+"|-----------------------------------------------|-------------|\n"
+"| <https://mirrors.hushan.tech:44300/voidlinux> | Asia: China |\n"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:59
+msgid "## Tor Mirrors"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:62
+msgid ""
+"Void Linux is also mirrored on the Tor network. See [Using Tor Mirrors](./"
+"tor.md) for more information."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:64
+msgid "## Creating a mirror"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:70
+msgid ""
+"If you'd like to set up a mirror, and are confident you can keep it "
+"reasonably up-to-date, follow one of the many guides available for mirroring "
+"with [rsync(1)](https://man.voidlinux.org/rsync.1), then submit a pull "
+"request to [the void-docs repository](https://github.com/void-linux/void-"
+"docs) to add your mirror to the appropriate mirror table on this page."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:74
+msgid ""
+"A full mirror requires around 1TB of storage. It is also possible to mirror "
+"only part of the repositories. Excluding debug packages is one way of "
+"decreasing the load on the Tier 1 mirrors, with low impact on users."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/mirrors/index.md:77
+msgid ""
+"Please keep in mind that we pay bandwidth for all data sent out from the "
+"Tier 1 mirrors. You can respect this by only mirroring if your use case for "
+"your mirror will offset the network throughput consumed by your mirror "
+"syncing."
+msgstr ""

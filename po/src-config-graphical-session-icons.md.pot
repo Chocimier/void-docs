@@ -1,0 +1,49 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/config/graphical-session/icons.md:2
+msgid "# Icons"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/icons.md:4
+msgid "## GTK"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/icons.md:12
+msgid ""
+"By default, GTK-based applications try to use the Adwaita icon theme for "
+"application icons. Consequently, installation of the `gtk+3` package will "
+"also install the `adwaita-icon-theme` package. If you wish to use a "
+"different theme, install the relevant package, then specify the theme in `/"
+"etc/gtk-3.0/settings.ini` or `~/.config/gtk-3.0/settings.ini`.  `adwaita-"
+"icon-theme` can be removed after [ignoring](../../xbps/advanced-usage."
+"md#ignoring-packages) the package."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/icons.md:18
+msgid ""
+"For information about how to specify a different GTK icon theme in `settings."
+"ini`, refer to [the GtkSettings documentation](https://developer.gnome.org/"
+"gtk3/stable/GtkSettings.html#GtkSettings.properties), in particular the "
+"\"[gtk-icon-theme-name](https://developer.gnome.org/gtk3/stable/GtkSettings."
+"html#GtkSettings--gtk-icon-theme-name)\" property."
+msgstr ""

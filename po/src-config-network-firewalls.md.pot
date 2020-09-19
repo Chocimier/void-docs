@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/config/network/firewalls.md:2
+msgid "# Firewalls"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:4
+msgid "## iptables"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:10
+msgid ""
+"By default, the `iptables` package is installed on the base system. It "
+"provides [iptables(8)/ip6tables(8)](https://man.voidlinux.org/iptables.8). "
+"The related services use the `/etc/iptables/iptables.rules` and `/etc/"
+"iptables/ip6tables.rules` ruleset files, which must be created by the system "
+"administrator."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:13
+msgid ""
+"Two example rulesets are provided in the `/etc/iptables` directory: `empty."
+"rules` and `simple_firewall.rules`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:15 src/config/network/firewalls.md:74
+msgid "### Applying the rules at boot"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:19
+msgid ""
+"To apply iptables rules at runit stage 1, install the `runit-iptables` "
+"package.  This adds a core-service which restores the `iptables.rules` and "
+"`ip6tables.rules` rulesets."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:22
+msgid ""
+"Alternatively, to apply these rules at stage 2, add the following to `/etc/"
+"rc.local`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:27
+#, no-wrap
+msgid ""
+"```\n"
+"if [ -e /etc/iptables/iptables.rules ]; then\n"
+"  iptables-restore /etc/iptables/iptables.rules\n"
+"fi\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:32
+#, no-wrap
+msgid ""
+"if [ -e /etc/iptables/ip6tables.rules ]; then\n"
+"  ip6tables-restore /etc/iptables/ip6tables.rules\n"
+"fi\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:34
+msgid "After rebooting, check the active firewall rules:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:39
+msgid "``` # iptables -L # ip6tables -L ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:41 src/config/network/firewalls.md:79
+msgid "### Applying the rules at runtime"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:46
+msgid ""
+"`iptables` comes with two runit services, `iptables` and `ip6tables`, to "
+"quickly flush or restore the `iptables.rules` and `ip6tables.rules` "
+"rulesets. Once these services are [enabled](../services/index.md#enabling-"
+"services), you can flush the rulesets by downing the relevant service, e.g.:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:50
+msgid "``` # sv down iptables ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:52
+msgid "and restore them by upping the relevant service, e.g.:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:56
+msgid "``` # sv up ip6tables ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:58
+msgid "## nftables"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:65
+msgid ""
+"`nftables` replaces `iptables`, `ip6tables`, `arptables` and `ebtables` "
+"(collectively referred to as `xtables`). The [nftables wiki](https://wiki."
+"nftables.org/wiki-nftables/index.php/Main_Page) describes [the main "
+"differences](https://wiki.nftables.org/wiki-nftables/index.php/"
+"Main_differences_with_iptables)  from the `iptables` toolset."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:72
+msgid ""
+"To use `nftables`, install the `nftables` package, which provides [nft(8)]"
+"(https://man.voidlinux.org/nft.8). It also provides [iptables-translate(8)/"
+"ip6tables-translate(8)](https://man.voidlinux.org/iptables-translate.8)  and "
+"[iptables-restore-translate(8)/ip6tables-restore-translate(8)](https://man."
+"voidlinux.org/iptables-restore-translate.8), which convert `iptables` rules "
+"to `nftables` rules."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:77
+msgid ""
+"To apply nftables rules at runit stage 1, install the `runit-nftables` "
+"package.  This adds a core-service which restores the ruleset in `/etc/"
+"nftables.conf`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:83
+msgid ""
+"The `nftables` package provides the `nftables` service, which uses rules "
+"from `/etc/nftables.conf`. Once you [enable](../services/index.md#enabling-"
+"service)  the `nftables` service, to load the rules, run:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:87
+msgid "``` # sv up nftables ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:89
+msgid "To flush the rules, run:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/firewalls.md:92
+msgid "``` # sv down nftables ```"
+msgstr ""

@@ -1,0 +1,87 @@
+# Polish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#. type: Plain text
+#: src/xbps/repositories/custom.md:2
+msgid "# Custom Repositories"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/custom.md:8
+msgid ""
+"Void supports user-created repositories, both local and remote. This is only "
+"recommended for serving custom packages created personally, or packages from "
+"another trusted source. The Void project does not support *any* third-party "
+"package repositories - the use of third-party software packages poses very "
+"serious security concerns, and risks serious damage your system."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/custom.md:10
+msgid "## Adding custom repositories"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/custom.md:12
+msgid ""
+"To add a custom repository, create a file in `/etc/xbps.d`, with the "
+"contents:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/custom.md:16
+msgid "``` repository=<URL> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/custom.md:18
+msgid ""
+"where `<URL>` is either a local directory or a URL to a remote repository."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/custom.md:20
+msgid "For example, to define a remote repository:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/custom.md:24
+msgid ""
+"``` # echo 'repository=http://my.domain.com/repo' > /etc/xbps.d/my-remote-"
+"repo.conf ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/custom.md:28
+msgid ""
+"Remote repositories need to be [signed](./signing.md).  [xbps-install(1)]"
+"(https://man.voidlinux.org/xbps-install.1) refuses to install packages from "
+"remote repositories if they are not signed."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/custom.md:30
+msgid "To define a local repository:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/custom.md:33
+msgid ""
+"``` # echo 'repository=/path/to/repo' > /etc/xbps.d/my-local-repo.conf ```"
+msgstr ""

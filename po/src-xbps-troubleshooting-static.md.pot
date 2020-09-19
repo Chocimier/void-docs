@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/xbps/troubleshooting/static.md:2
+msgid "# Static XBPS"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/static.md:7
+msgid ""
+"In rare cases, it is possible to break the system sufficiently that XBPS can "
+"no longer function. This usually happens while trying to do unsupported "
+"things with libc, but can also happen when an update contains a corrupt "
+"glibc archive or otherwise fails to unpack and configure fully."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/static.md:12
+msgid ""
+"Another issue that can present itself is in systems with a XBPS version "
+"before `0.54` (released June 2019). These systems will be impossible to "
+"update from the official repositories using the regular update procedure, "
+"due a change in the compression format used for repository data, which was "
+"made in March 2020."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/static.md:15
+msgid ""
+"In these cases it is possible to recover your system with a separate, "
+"statically compiled copy of XBPS."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/static.md:17
+msgid "## Obtaining static XBPS"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/static.md:21
+msgid ""
+"Statically compiled versions of XBPS are available in all mirrors in the "
+"static/ directory. The link below points to the static copies on the primary "
+"mirror in Germany:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/static.md:23
+msgid "<https://alpha.de.repo.voidlinux.org/static>"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/static.md:26
+msgid ""
+"Download and unpack the latest version, or the version that matches the "
+"broken copy on your system (with a preference for the latest copy)."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/static.md:28
+msgid "## Using static XBPS"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/static.md:35
+msgid ""
+"The tools in the static set are identical to the normal ones found on most "
+"systems. The only distinction is that these tools are statically linked to "
+"the musl C library, and should work on systems where nothing else does. In "
+"systems where the platform can no longer boot, it is recommended to chroot "
+"in with Void installation media and use the static tools from there, as it "
+"is unlikely that even a shell will work correctly on the target system. When "
+"using static XBPS with glibc installation, environmental variable "
+"`XBPS_ARCH` need to be set."
+msgstr ""
