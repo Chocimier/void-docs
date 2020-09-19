@@ -1,0 +1,150 @@
+# Spanish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: Plain text
+#: src/config/users-and-groups.md:2
+msgid "# Users and Groups"
+msgstr ""
+
+#. type: Plain text
+#: src/config/users-and-groups.md:9
+msgid ""
+"The [useradd(8)](https://man.voidlinux.org/useradd.8), [userdel(8)](https://"
+"man.voidlinux.org/userdel.8) and [usermod(8)](https://man.voidlinux.org/"
+"usermod.8) commands are used to add, delete and modify users respectively. "
+"The [passwd(1)](https://man.voidlinux.org/passwd.1) command is used to "
+"change passwords."
+msgstr ""
+
+#. type: Plain text
+#: src/config/users-and-groups.md:16
+msgid ""
+"The [groupadd(8)](https://man.voidlinux.org/groupadd.8), [groupdel(8)]"
+"(https://man.voidlinux.org/groupdel.8) and [groupmod(8)](https://man."
+"voidlinux.org/groupmod.8) commands are used to add, delete and modify groups "
+"respectively. The [groups(1)](https://man.voidlinux.org/groups.1) command "
+"lists all groups a user belongs to."
+msgstr ""
+
+#. type: Plain text
+#: src/config/users-and-groups.md:18
+msgid "## Default shell"
+msgstr ""
+
+#. type: Plain text
+#: src/config/users-and-groups.md:21
+msgid ""
+"The default shell for a user can be changed with [chsh(1)](https://man."
+"voidlinux.org/chsh.1):"
+msgstr ""
+
+#. type: Plain text
+#: src/config/users-and-groups.md:25
+msgid "``` $ chsh -s <shell> <user_name> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/users-and-groups.md:28
+msgid ""
+"`<shell>` must be the path to the shell as specified by `/etc/shells` or the "
+"output of `chsh -l`, which provides a list of installed shells."
+msgstr ""
+
+#. type: Plain text
+#: src/config/users-and-groups.md:30
+msgid "## sudo"
+msgstr ""
+
+#. type: Plain text
+#: src/config/users-and-groups.md:34
+msgid ""
+"[sudo(8)](https://man.voidlinux.org/sudo.8) is installed by default, but "
+"might not be configured appropriately for your needs. It is only necessary "
+"to configure sudo if you wish to use it."
+msgstr ""
+
+#. type: Plain text
+#: src/config/users-and-groups.md:37
+msgid ""
+"Use [visudo(8)](https://man.voidlinux.org/visudo.8) as root to edit the "
+"[sudoers(5)](https://man.voidlinux.org/sudoers.5) file."
+msgstr ""
+
+#. type: Plain text
+#: src/config/users-and-groups.md:39
+msgid "To create a superuser, uncomment the line"
+msgstr ""
+
+#. type: Plain text
+#: src/config/users-and-groups.md:43
+msgid "``` #%wheel ALL=(ALL) ALL ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/users-and-groups.md:45
+msgid "and add users to the `wheel` group."
+msgstr ""
+
+#. type: Plain text
+#: src/config/users-and-groups.md:47
+msgid "## Default Groups"
+msgstr ""
+
+#. type: Plain text
+#: src/config/users-and-groups.md:49
+msgid "Void Linux defines a number of groups by default."
+msgstr ""
+
+#. type: Plain text
+#: src/config/users-and-groups.md:82
+#, no-wrap
+msgid ""
+"| Group      | Description                                                   |\n"
+"|------------|---------------------------------------------------------------|\n"
+"| `root`     | Complete access to the system.                                |\n"
+"| `bin`      | Unused - present for historical reasons.                      |\n"
+"| `sys`      | Unused - present for historical reasons.                      |\n"
+"| `kmem`     | Ability to read from `/dev/mem` and `/dev/port`.              |\n"
+"| `wheel`    | Elevated privileges for specific system administration tasks. |\n"
+"| `tty`      | Access to TTY-like devices:                                   |\n"
+"|            | `/dev/tty*`, `/dev/pts*`, `/dev/vcs*`.                        |\n"
+"| `tape`     | Access to tape devices.                                       |\n"
+"| `daemon`   | System daemons that need to write to files on disk.           |\n"
+"| `floppy`   | Access to floppy drives.                                      |\n"
+"| `disk`     | Raw access to `/dev/sd*` and `/dev/loop*`.                    |\n"
+"| `lp`       | Access to printers.                                           |\n"
+"| `dialout`  | Access to serial ports.                                       |\n"
+"| `audio`    | Access to audio devices.                                      |\n"
+"| `video`    | Access to video devices.                                      |\n"
+"| `utmp`     | Ability to write to `/var/run/utmp`, `/var/log/wtmp`          |\n"
+"|            | and `/var/log/btmp`.                                          |\n"
+"| `adm`      | Unused - present for historical reasons. This group was       |\n"
+"|            | traditionally used for system monitoring, such as viewing     |\n"
+"|            | files in `/var/log`.                                          |\n"
+"| `cdrom`    | Access to CD devices.                                         |\n"
+"| `optical`  | Access to DVD/CD-RW devices.                                  |\n"
+"| `mail`     | Used by some mail packages, e.g. `dma`.                       |\n"
+"| `storage`  | Access to removable storage devices.                          |\n"
+"| `scanner`  | Ability to access scanners.                                   |\n"
+"| `network`  | Unused - present for historical reasons.                      |\n"
+"| `kvm`      | Ability to use KVM for virtual machines, e.g. via QEMU.       |\n"
+"| `input`    | Access to input devices: `/dev/mouse*`, `/dev/event*`.        |\n"
+"| `nogroup`  | System daemons that don't need to own any files.              |\n"
+"| `users`    | Ordinary users.                                               |\n"
+"| `xbuilder` | To use xbps-uchroot(1) with `xbps-src`.                       |\n"
+msgstr ""

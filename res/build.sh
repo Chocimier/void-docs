@@ -5,6 +5,8 @@
 set -e
 PATH="$PWD/res:$PATH"
 
+po4a.sh
+
 # Build HTML mdbook
 echo "Building mdBook"
 mdbook build

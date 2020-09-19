@@ -1,0 +1,336 @@
+# Russian translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 09:52+0200\n"
+"PO-Revision-Date: 2020-09-19 09:52+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. type: Plain text
+#: src/config/media/alsa.md:17 src/config/media/sndio.md:7
+#: src/config/bluetooth.md:37 src/config/graphical-session/wayland.md:75
+#: src/config/network/iwd.md:22 src/installation/guides/chroot.md:130
+#: src/installation/guides/arm-devices/index.md:114
+msgid "## Configuration"
+msgstr ""
+
+#. type: Plain text
+#: src/config/bluetooth.md:18 src/config/graphical-session/xorg.md:9
+#: src/config/graphical-session/wayland.md:7
+#: src/config/graphical-session/kde.md:4
+#: src/config/graphical-session/gnome.md:9 src/config/network/iwd.md:7
+#: src/installation/guides/arm-devices/index.md:23
+msgid "## Installation"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/platforms.md:40
+#: src/installation/guides/arm-devices/index.md:167
+msgid "### Graphical session"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:2
+msgid "# ARM Devices"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:5
+msgid ""
+"Void Linux provides packages and images for several ARM devices. Installing "
+"Void on such devices can be done in several ways:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:14
+#, no-wrap
+msgid ""
+"- [Pre-built images](#pre-built-images): images that can be flashed directly\n"
+"   onto an SD card or other storage medium, but which give you a limited\n"
+"   partition layout, and require manual expansion if you wish to increase the\n"
+"   size of the partitions;\n"
+"- [Tarball installation](#tarball-installation): PLATFORMFS and ROOTFS tarballs\n"
+"   that can be extracted to a previously prepared partition scheme; and\n"
+"- [Chroot installation](#chroot-installation): follows most of the steps\n"
+"   outlined in [the chroot guide](../chroot.md).\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:17
+msgid ""
+"This guide also outlines [configuration steps](#configuration) that are "
+"mostly specific to such devices."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:21
+msgid ""
+"Since most of the commands in this guide will be run on external storage, it "
+"is important to run [sync(1)](https://man.voidlinux.org/sync.1) before "
+"removing the device."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:27
+msgid ""
+"If you are installing Void Linux on one of the ARM devices covered in the "
+"\"[Supported platforms](./platforms.md)\" page, make sure to read its "
+"section thoroughly."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:29
+msgid "### Pre-built images"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:36
+msgid ""
+"After [downloading and verifying](../../index.md#downloading-installation-"
+"media)  an image, it can be written to the relevant media with [cat(1)]"
+"(https://man.voidlinux.org/cat.1), [pv(1)](https://man.voidlinux.org/pv.1), "
+"or [dd(1)](https://man.voidlinux.org/dd.1). For example, to flash it onto an "
+"SD card located at `/dev/mmcblk0`:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:40
+msgid "``` # dd if=<image>.img of=/dev/mmcblk0 bs=4M status=progress ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:42
+msgid "### Custom partition layout"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:45
+msgid ""
+"Customizing an installation - for example, with a custom partition layout - "
+"requires a more involved process. Two available options are:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:48
+msgid ""
+"- [Tarball installation](#tarball-installation); and - [Chroot installation]"
+"(#chroot-installation)."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:52
+msgid ""
+"To prepare the storage for these installation methods, it is necessary to "
+"partition the storage medium and then mount the partitions at the correct "
+"mount points."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:55
+msgid ""
+"The usual partitioning scheme for ARM devices requires at least two "
+"partitions, on a drive formatted with an MS-DOS partition table:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:63
+#, no-wrap
+msgid ""
+"- one formatted as FAT32 with partition type `0c`, which will be mounted on\n"
+"   `/boot`;\n"
+"- one that can be formatted as any file system that Linux can boot from, such as\n"
+"   ext4, which will be mounted on `/`. If you're using an SD card, you can\n"
+"   create the ext4 file system with the `^has_journal` option - this disables\n"
+"   journaling, which might increase the drive's life, at the cost of a higher\n"
+"   chance of data loss.\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:66
+msgid ""
+"There are a variety of tools available for partitioning, e.g.  [cfdisk(8)]"
+"(https://man.voidlinux.org/cfdisk.8)."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:71
+msgid ""
+"To access the newly created file systems, it is necessary to mount them. "
+"This guide will assume that the second partition will be mounted on `/mnt`, "
+"but you may mount it elsewhere. To mount these filesystems, you can use the "
+"commands below, replacing the device names with the appropriate ones for "
+"your setup:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:77
+msgid ""
+"``` # mount /dev/mmcblk0p2 /mnt # mkdir /mnt/boot # mount /dev/mmcblk0p1 /"
+"mnt/boot ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:79
+msgid "#### Tarball installation"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:84
+msgid ""
+"First, [download and verify](../../index.md#downloading-installation-media) "
+"a PLATFORMFS or ROOTFS tarball for your desired platform and [prepare your "
+"storage medium](#custom-partition-layout). Then, unpack the tarball onto the "
+"file system using [tar(1)](https://man.voidlinux.org/tar.1):"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:88
+msgid "``` # tar xvfp <image>.tar.xz -C /mnt ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:90
+msgid "#### Chroot installation"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:96
+msgid ""
+"It is also possible to perform a chroot installation, which can require the "
+"`qemu-user-static` package together with either the `binfmt-support` or "
+"`proot` package if a computer with an incompatible architecture (such as "
+"i686) is being used. This guide explains how to use the `qemu-<platform>-"
+"static` program from `qemu-user-static` with [proot(1)](https://man."
+"voidlinux.org/proot.1)."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:102
+msgid ""
+"First, [prepare your storage medium](#custom-partition-layout). Then, follow "
+"either the [XBPS chroot installation](../chroot.md#the-xbps-method) or the "
+"[ROOTFS chroot installation](../chroot.md#the-rootfs-method) steps, using "
+"the appropriate architecture and base packages, some of which are listed in "
+"the \"[Supported Platforms](./platforms.md)\" section."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:108
+msgid ""
+"Finally, follow the [chroot configuration steps](../chroot."
+"md#configuration)  steps, but instead of using the [chroot(1)](https://man."
+"voidlinux.org/chroot.1)  command to [enter the chroot](../chroot.md#entering-"
+"the-chroot), use the following command, replacing `<platform>` with `arm` "
+"for armv6l and armv7l devices, and with `aarch64` for aarch64 devices:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:112
+msgid "``` # proot -q qemu-<platform>-static -r /mnt -w / ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:118
+msgid ""
+"Some additional configuration steps need to be followed to guarantee a "
+"working system. Configuring a [graphical session](../../../config/graphical-"
+"session/index.md) should work as normal."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:120
+msgid "### Logging in"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:123
+msgid ""
+"For the pre-built images and tarball installations, the `root` user password "
+"is `voidlinux`."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:125
+msgid "### fstab"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:132
+msgid ""
+"The `/boot` partition should be added to `/etc/fstab`, with an entry similar "
+"to the one below. It is possible to boot without that entry, but updating "
+"the kernel package in that situation can lead to breakage, such as being "
+"unable to find kernel modules, which are essential for functionality such as "
+"wireless connectivity. If you aren't using an SD card, replace `/dev/"
+"mmcblk0p1` with the appropriate device path."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:136
+msgid "``` /dev/mmcblk0p1 /boot vfat defaults 0 0 ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:138
+msgid "### System time"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:151
+msgid ""
+"Several of the ARM devices supported by Void Linux don't have battery "
+"powered real time clocks (RTCs), which means they won't keep track of time "
+"once powered off. This issue can present itself as HTTPS errors when "
+"browsing the Web or using the package manager. It is possible to set the "
+"time manually using the [date(1)](https://man.voidlinux.org/date.1) utility. "
+"In order to fix this issue for subsequent boots, install and enable [an NTP "
+"client](../../../config/date-time.md#ntp). Furthermore, it is possible to "
+"install the `fake-hwclock` package, which provides the `fake-hwclock` "
+"service.  [fake-hwclock(8)](https://man.voidlinux.org/fake-hwclock.8) "
+"periodically stores the current time in a configuration file and restores it "
+"at boot, leading to a better initial approximation of the current time, even "
+"without a network connection."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:157
+#, no-wrap
+msgid ""
+"**Warning**: Images from before 2020-03-16 might have an issue where the\n"
+"installation of the `chrony` package, the default NTP daemon, is incomplete, and\n"
+"the system will be missing the `chrony` user. This can be checked in the output\n"
+"of the [getent(1)](https://man.voidlinux.org/getent.1) command, which will be\n"
+"empty if it doesn't exist:\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:162
+msgid "``` $ getent group chrony chrony:x:997 ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:165
+msgid ""
+"In order to fix this, it is necessary to reconfigure the `chrony` package "
+"using [xbps-reconfigure(1)](https://man.voidlinux.org/xbps-reconfigure)."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/guides/arm-devices/index.md:171
+msgid ""
+"The `xf86-video-fbturbo` package ships a modified version of the [DDX Xorg "
+"driver](../../../config/graphical-session/xorg.md#ddx) found in the `xf86-"
+"video-fbdev` package, which is optimized for ARM devices. This can be used "
+"for devices which lack more specific drivers."
+msgstr ""

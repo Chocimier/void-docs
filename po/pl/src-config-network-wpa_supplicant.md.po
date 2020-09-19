@@ -1,0 +1,192 @@
+# Polish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:2
+msgid "# wpa_supplicant"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:7
+msgid ""
+"The `wpa_supplicant` package is installed by default on the base system. It "
+"includes utilities to configure wireless interfaces and handle wireless "
+"security protocols. To use wpa_supplicant, you will need to enable [the "
+"wpa_supplicant service](#the-wpa_supplicant-service)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:14
+msgid ""
+"[wpa_supplicant(8)](https://man.voidlinux.org/wpa_supplicant.8) is a daemon "
+"that manages wireless interfaces based on [wpa_supplicant.conf(5)](https://"
+"man.voidlinux.org/wpa_supplicant.conf.5)  configuration files. An extensive "
+"overview of configuration options, including examples, can be found in `/usr/"
+"share/examples/wpa_supplicant/wpa_supplicant.conf`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:19
+msgid ""
+"[wpa_passphrase(8)](https://man.voidlinux.org/wpa_passphrase.8) helps create "
+"pre-shared keys for use in configuration files.  [wpa_cli(8)](https://man."
+"voidlinux.org/wpa_cli.8) provides a CLI for managing the `wpa_supplicant` "
+"daemon."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:21
+msgid "## WPA-PSK"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:25
+msgid ""
+"To use WPA-PSK, generate a pre-shared key with [wpa_passphrase(8)](https://"
+"man.voidlinux.org/wpa_passphrase.8) and append the output to the relevant "
+"`wpa_supplicant.conf` file:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:29
+msgid ""
+"``` # wpa_passphrase <MYSSID> <passphrase> >> /etc/wpa_supplicant/"
+"wpa_supplicant-<device_name>.conf ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:31
+msgid "## WPA-EAP"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:34
+msgid ""
+"WPA-EAP is often used for institutional logins, notably eduroam. This does "
+"not use PSK, but a password hash can be generated like this:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:38
+msgid "``` $ echo -n <passphrase> | iconv -t utf16le | openssl md4 ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:40
+msgid "## WEP"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:43
+msgid ""
+"For WEP configuration, add the following lines to your device's `wpa-"
+"supplicant.conf`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:53
+#, no-wrap
+msgid ""
+"```\n"
+"network={\n"
+"    ssid=\"MYSSID\"\n"
+"    key_mgmt=NONE\n"
+"    wep_key0=\"YOUR AP WEP KEY\"\n"
+"    wep_tx_keyidx=0\n"
+"    auth_alg=SHARED\n"
+"}\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:55
+msgid "### The wpa_supplicant service"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:58
+msgid ""
+"The `wpa_supplicant` service checks the following options in `/etc/sv/"
+"wpa_supplicant/conf`:"
+msgstr ""
+
+#. type: Bullet: '- '
+#: src/config/network/wpa_supplicant.md:65
+msgid ""
+"`OPTS`: Options to be passed to the service. Overrides any other options."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:65
+#, no-wrap
+msgid ""
+"- `CONF_FILE`: Path to file to be used for configuration. Defaults to\n"
+"   `/etc/wpa_supplicant/wpa_supplicant.conf`.\n"
+"- `WPA_INTERFACE`: Interface to be matched. May contain a wildcard; defaults to\n"
+"   all interfaces.\n"
+"- `DRIVER`: Driver to use. See `wpa_supplicant -h` for available drivers.\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:68
+msgid ""
+"If no `conf` file is found, the service searches for the following files in "
+"`/etc/wpa_supplicant`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:73
+#, no-wrap
+msgid ""
+"- `wpa_supplicant-<interface>.conf`: If found, these files are bound to the\n"
+"   named interface.\n"
+"- `wpa_supplicant.conf`: If found, this file is loaded and binds to all other\n"
+"   interfaces found.\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:76
+msgid ""
+"Once you are satisfied with your configuration, [enable](../services/index."
+"md#enabling-services) the `wpa_supplicant` service."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:78
+msgid "### Using wpa_cli"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:81
+msgid ""
+"When using `wpa_cli` to manage `wpa_supplicant` from the command line, be "
+"sure to specify which network interface to use via the `-i` option, e.g.:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:85
+msgid "``` # wpa_cli -i wlp2s0 ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/wpa_supplicant.md:87
+msgid ""
+"Not doing so can result in various `wpa_cli` commands (for example, `scan` "
+"and `scan_results`) not producing the expected output."
+msgstr ""

@@ -1,0 +1,170 @@
+# Polish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 09:52+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#. type: Plain text
+#: src/config/media/alsa.md:17 src/config/media/sndio.md:7
+#: src/config/bluetooth.md:37 src/config/graphical-session/wayland.md:75
+#: src/config/network/iwd.md:22 src/installation/guides/chroot.md:130
+#: src/installation/guides/arm-devices/index.md:114
+msgid "## Configuration"
+msgstr ""
+
+#. type: Plain text
+#: src/config/bluetooth.md:18 src/config/graphical-session/xorg.md:9
+#: src/config/graphical-session/wayland.md:7
+#: src/config/graphical-session/kde.md:4
+#: src/config/graphical-session/gnome.md:9 src/config/network/iwd.md:7
+#: src/installation/guides/arm-devices/index.md:23
+msgid "## Installation"
+msgstr ""
+
+#. type: Plain text
+#: src/config/bluetooth.md:29 src/config/network/iwd.md:11
+msgid "## Usage"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:79
+#: src/config/graphical-session/graphics-drivers/intel.md:33
+#: src/config/network/iwd.md:53
+msgid "## Troubleshooting"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:2
+msgid "# IWD"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:5
+msgid ""
+"[IWD](https://iwd.wiki.kernel.org/) (iNet Wireless Daemon) is a wireless "
+"daemon for Linux that aims to replace [WPA supplicant](./wpa_supplicant.md)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:9
+msgid "Install the `iwd` package and enable the `dbus` and `iwd` services."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:17
+msgid ""
+"The command-line client [iwctl(1)](https://man.voidlinux.org/iwctl.1) can be "
+"used to add, remove, and configure network connections. Commands can be "
+"passed as arguments; when run without arguments, it provides an interactive "
+"session. To list available commands, run `iwctl help`, or run `iwctl` and "
+"enter `help` at the interactive prompt."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:20
+msgid ""
+"By default, only the root user and those in the `wheel` group have "
+"permission to operate `iwctl`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:27
+msgid ""
+"Configuration options and examples are described below. Consult the relevant "
+"manual pages and the [upstream documentation](https://iwd.wiki.kernel.org/"
+"networkconfigurationsettings) for further information."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:29
+msgid "### Daemon configuration"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:33
+msgid ""
+"The main configuration file is located in `/etc/iwd/main.conf`. If it does "
+"not exist, you may create it. It is documented in [iwd.config(5)](https://"
+"man.voidlinux.org/iwd.config.5)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:35
+msgid "### Network configuration"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:43
+msgid ""
+"Network configuration, including examples, is documented in [iwd.network(5)]"
+"(https://man.voidlinux.org/iwd.network.5). IWD stores information on known "
+"networks, and reads information on pre-provisioned networks from network "
+"configuration files located in `/var/lib/iwd`; IWD monitors the directory "
+"for changes. Network configuration filenames consist of the encoding of the "
+"SSID followed by `.open`, `.psk`, or `.8021x` as determined by the security "
+"type."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:46
+msgid ""
+"As an example, a basic configuration file for a WPA2/PSK secured network "
+"would be called `<ssid>.psk`, and it would contain the plain text password:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:51
+msgid "``` [Security] Passphrase=<password> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:59
+msgid ""
+"By default, IWD will create and destroy the wireless interfaces (e.g. "
+"`wlan0`)  that it manages. This can interfere with `udevd`, which may "
+"attempt to rename the interface using its rules for persistent network "
+"interface names. The following messages may be printed to your screen as a "
+"symptom of this interference:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:64
+#, no-wrap
+msgid ""
+"```\n"
+"[   39.441723] udevd[1100]: Error changing net interface name wlan0 to wlp59s0: Device or resource busy\n"
+"[   39.442472] udevd[1100]: could not rename interface '3' from 'wlan0' to 'wlp59s0': Device or resource busy\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:68
+msgid ""
+"A simple fix is to prevent IWD from manipulating the network interfaces in "
+"this way by adding `UseDefaultInterface=true` to the `[General]` section of "
+"`/etc/iwd/main.conf`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/network/iwd.md:73
+msgid ""
+"An alternative approach is to disable the use of persistent network "
+"interface names by `udevd`. This may be accomplished either by adding `net."
+"ifnames=0` to your kernel [cmdline](../kernel.md#cmdline) or by creating a "
+"symbolic link to `/dev/null` at `/etc/udev/rules.d/80-net-name-slot.rules` "
+"to mask the renaming rule. This alternative approach will affect the naming "
+"of all network devices."
+msgstr ""

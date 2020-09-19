@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/about/index.md:2
+msgid "# About"
+msgstr ""
+
+#. type: Plain text
+#: src/about/index.md:8
+msgid ""
+"Welcome to the Void Handbook! Please be sure to read the \"[About This "
+"Handbook](./about-this-handbook.md)\" section to learn how to use this "
+"documentation effectively. A local copy of this handbook, in several "
+"formats, can be [installed](../xbps/index.md) via the `void-docs` package "
+"and accessed with the [void-docs(1)](https://man.voidlinux.org/void-docs.1) "
+"utility."
+msgstr ""
+
+#. type: Plain text
+#: src/about/index.md:14
+msgid ""
+"Void is an independent, [rolling release](https://en.wikipedia.org/wiki/"
+"Rolling_release) Linux distribution, developed from scratch rather than as a "
+"fork, with a focus on stability over [bleeding-edge](https://en.wikipedia."
+"org/wiki/Bleeding_edge_technology). In addition, there are several features "
+"that make Void unique:"
+msgstr ""
+
+#. type: Plain text
+#: src/about/index.md:33
+#, no-wrap
+msgid ""
+"- The [XBPS](https://github.com/void-linux/xbps) package manager, which is\n"
+"   extremely fast, developed in-house, and performs checks when installing\n"
+"   updates to ensure that libraries are not changed to incompatible versions\n"
+"   which can break dependencies.\n"
+"- The [musl libc](https://musl.libc.org/), which focuses on standards compliance\n"
+"   and correctness, has first class support. This allows us to build certain\n"
+"   components for musl systems statically, which would not be practical on glibc\n"
+"   systems.\n"
+"- The [LibreSSL](https://www.libressl.org/) fork is used instead of the mainline\n"
+"   OpenSSL library. Developed as part of the OpenBSD project, LibreSSL is\n"
+"   dedicated to the security, quality, and maintainability of this critical\n"
+"   library.\n"
+"- [runit](../config/services/index.md) is used for\n"
+"   [init(8)](https://man.voidlinux.org/init.8) and service supervision. This\n"
+"   allows Void to support musl as a second libc choice, which would not be\n"
+"   possible with [systemd](https://www.freedesktop.org/wiki/Software/systemd/).\n"
+"   A side effect of this decision is a core system with clean and efficient\n"
+"   operation, and a small code base.\n"
+msgstr ""
+
+#. type: Plain text
+#: src/about/index.md:37
+msgid ""
+"Void is developed in the spare time of a handful of developers, and is "
+"generally considered stable enough for daily use. We do this for fun and "
+"hope that our work will be useful to others."
+msgstr ""
+
+#. type: Plain text
+#: src/about/index.md:39
+msgid ""
+"The name \"Void\" comes from the C literal `void`. It was chosen rather "
+"randomly, and has no deeper meaning."
+msgstr ""

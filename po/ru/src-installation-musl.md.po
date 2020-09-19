@@ -1,0 +1,123 @@
+# Russian translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. type: Plain text
+#: src/installation/musl.md:2
+msgid "# musl"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/musl.md:5
+msgid ""
+"[musl](https://musl.libc.org/) is a libc implementation which strives to be "
+"lightweight, fast, simple, and correct."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/musl.md:10
+msgid ""
+"Void officially supports musl by using it in its codebase for all target "
+"platforms (although binary packages are not available for i686). "
+"Additionally, all compatible packages in our official repositories are "
+"available with musl-linked binaries in addition to their glibc counterparts."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/musl.md:13
+msgid ""
+"Currently, there are nonfree and debug sub-repositories for musl, but no "
+"multilib sub-repo."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/musl.md:15
+msgid "## Incompatible software"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/musl.md:21
+msgid ""
+"musl practices very strict and minimal standard compliance. Many commonly "
+"used platform-specific extensions are not present. Because of this, it is "
+"common for software to need modification to compile and/or function "
+"properly. Void developers work to patch such software and hopefully get "
+"portability/correctness changes accepted into the upstream projects."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/musl.md:25
+msgid ""
+"Proprietary software rarely supports non-glibc libc implementations, "
+"although sometimes these applications are available as [flatpaks](https://"
+"flatpak.org/), which provide their own libc in the image."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/musl.md:27
+msgid "### glibc chroot"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/musl.md:29
+msgid "Software requiring glibc can be run in a glibc chroot."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/musl.md:33
+msgid ""
+"Create a directory that will contain the chroot, and install a base system "
+"in it via the `base-voidstrap` package. If network access is required, copy "
+"`/etc/resolv.conf` into the chroot; `/etc/hosts` may need to be copied as "
+"well."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/musl.md:35
+msgid "Several directories then need to be mounted as follows:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/musl.md:42
+msgid ""
+"``` # mount -t proc none <chroot_dir>/proc # mount -t sysfs none "
+"<chroot_dir>/sys # mount --rbind /dev <chroot_dir>/dev # mount --rbind /run "
+"<chroot_dir>/run ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/musl.md:46
+msgid ""
+"Use [chroot(1)](https://man.voidlinux.org/chroot.1) to change to the new "
+"root, then run glibc programs as usual. Once you've finished using it, "
+"unmount the chroot using [umount(8)](https://man.voidlinux.org/umount.8)."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/musl.md:48
+msgid "#### PRoot"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/musl.md:52
+msgid ""
+"An alternative to the above is [proot(1)](https://man.voidlinux.org/"
+"proot.1), a user-space implementation of chroot, mount --bind, and "
+"binfmt_misc. By installing the `proot` package, unprivileged users can "
+"utilize a chroot environment."
+msgstr ""

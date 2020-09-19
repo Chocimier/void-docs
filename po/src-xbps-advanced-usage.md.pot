@@ -1,0 +1,211 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:2
+msgid "# Advanced Usage"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:4
+msgid "## Downgrading"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:6
+msgid "XBPS allows you to downgrade a package to a specific package version."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:8
+msgid "### Via xdowngrade"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:11
+msgid ""
+"The easiest way to downgrade is to use `xdowngrade` from the `xtools` "
+"package, specifying the package version to which you wish to downgrade:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:15
+msgid "``` # xdowngrade /var/cache/xbps/pkg-1.0_1.xbps ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:17
+msgid "### Via XBPS"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:20
+msgid ""
+"XBPS can be used to downgrade to a package version that is no longer "
+"available in the repository index."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:25
+msgid ""
+"If the package version had been installed previously, it will be available "
+"in `/var/cache/xbps/`. If not, it will need to be obtained from elsewhere; "
+"for the purposes of this example, it will be assumed that the package "
+"version has been added to `/var/cache/xbps/`."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:27
+msgid "First add the package version to your local repository:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:31
+msgid "``` # xbps-rindex -a /var/cache/xbps/pkg-1.0_1.xbps ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:33
+msgid "Then downgrade with `xbps-install`:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:37
+msgid "``` # xbps-install -R /var/cache/xbps/ -f pkg-1.0_1 ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:40
+msgid ""
+"The `-f` flag is necessary to force downgrade/re-installation of an already "
+"installed package."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:42
+msgid "## Holding packages"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:45
+msgid ""
+"To prevent a package from being updated during a system update, use [xbps-"
+"pkgdb(1)](https://man.voidlinux.org/xbps-pkgdb.1):"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:49
+msgid "``` # xbps-pkgdb -m hold <package> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:51
+msgid "The hold can be removed with:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:55
+msgid "``` # xbps-pkgdb -m unhold <package> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:57
+msgid "## Repository-locking packages"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:63
+msgid ""
+"If you've used `xbps-src` to build and install a package from a customized "
+"template, or with custom build options, you may wish to prevent system "
+"updates from replacing that package with a non-customized version. To ensure "
+"that a package is only updated from the same repository used to install it, "
+"you can *repolock* it via [xbps-pkgdb(1)](https://man.voidlinux.org/xbps-"
+"pkgdb.1):"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:67
+msgid "``` # xbps-pkgdb -m repolock <package> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:69
+msgid "To remove the repolock:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:73
+msgid "``` # xbps-pkgdb -m repounlock <package> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:75
+msgid "## Ignoring Packages"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:82
+msgid ""
+"Sometimes you may wish to remove a package whose functionality is being "
+"provided by another package, but will be unable to do so due to dependency "
+"issues. For example, you may wish to use [doas(1)](https://man.voidlinux.org/"
+"doas.1) instead of [sudo(8)](https://man.voidlinux.org/sudo.8), but will be "
+"unable to remove the `sudo` package due to it being a dependency of the "
+"`base-system` package. To remove it, you will need to *ignore* the `sudo` "
+"package."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:85
+msgid ""
+"To ignore a package, add an appropriate `ignorepkg` entry in an [xbps.d(5)]"
+"(https://man.voidlinux.org/xbps.d.5) configuration file. For example:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:89
+msgid "``` ignorepkg=sudo ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:92
+msgid ""
+"You will then be able to remove the `sudo` package using [xbps-remove(1)]"
+"(https://man.voidlinux.org/xbps-remove.1)."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:94
+msgid "## Virtual Packages"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:100
+msgid ""
+"Virtual packages can be created with [xbps.d(5)](https://man.voidlinux.org/"
+"xbps.d.5) `virtualpkg` entries. Any request to the virtual package will be "
+"resolved to the real package. For example, to create a `linux` virtual "
+"package which will resolve to the `linux5.6` package, create an `xbps.d` "
+"configuration file with the contents:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/advanced-usage.md:103
+msgid "``` virtualpkg=linux:linux5.6 ```"
+msgstr ""

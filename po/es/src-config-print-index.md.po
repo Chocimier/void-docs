@@ -1,0 +1,204 @@
+# Spanish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 09:52+0200\n"
+"PO-Revision-Date: 2020-09-19 09:52+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: Plain text
+#: src/config/print/index.md:2
+msgid "# Printing"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:5
+msgid ""
+"CUPS (Common Unix Printing System) is the supported mechanism for connecting "
+"to printers on Void Linux."
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:8
+msgid ""
+"As prerequisites, install the `cups` package and enable the `cupsd` "
+"service.  Wait until the service is marked available."
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:10
+msgid "## Installing Printing Drivers"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:15
+msgid ""
+"If the printer is being accessed over the network and supports PostScript or "
+"PCL, CUPS alone should be sufficient. However, additional driver packages "
+"are necessary for local printer support. The `cups-filters` package provides "
+"driver support for CUPS."
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:17
+msgid ""
+"Depending on the hardware in question, additional drivers may be necessary."
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:21
+msgid ""
+"Some CUPS drivers contain proprietary or binary-only extensions. These are "
+"available only in the nonfree repository, and sometimes only for specific "
+"architectures."
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:23
+msgid "### Gutenprint drivers"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:26
+msgid ""
+"Gutenprint provides support for many printers. These drivers are contained "
+"in the `gutenprint` package."
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:28
+msgid "### HP drivers"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:30
+msgid "Printers from Hewlett-Packard require the `hplip` package."
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:34
+msgid ""
+"Running the following command will guide you through the driver installation "
+"process. The default configuration selections it suggests are typically "
+"sufficient."
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:38
+msgid "``` # hp-setup -i ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:40
+msgid "### Brother drivers"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:43
+msgid ""
+"For Brother printer support, install the foomatic drivers, which are "
+"contained in the `foomatic-db` and `foomatic-db-nonfree` packages."
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:45
+msgid "## Configuring a New Printer"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:49
+msgid ""
+"CUPS provides a web interface and command line tools that can be used to "
+"configure printers. Additionally, various native GUI options are available "
+"and may be better suited, depending on the use-case."
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:51
+msgid "### Web interface"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:55
+msgid ""
+"To configure the printer using the CUPS web interface, navigate to <http://"
+"localhost:631> in a browser. Under the \"Administration\" tab, select "
+"\"Printers > Add Printer\"."
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:57
+msgid "### Command line"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:60
+msgid ""
+"The [lpadmin(8)](https://man.voidlinux.org/lpadmin.8) tool may be used to "
+"configure a printer using the command line."
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:62
+msgid "### Graphical interface"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:65
+msgid ""
+"The `system-config-printer` package offers simple and robust configuration "
+"of new printers. Install and invoke it:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:69
+msgid "``` # system-config-printer ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:73
+msgid ""
+"Normally this tool requires root privileges. However, if you are using "
+"PolicyKit, you can install the `cups-pk-helper` package to allow "
+"unprivileged users to use `system-config-printer`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:77
+msgid ""
+"While `system-config-printer` is shown here, your desktop environment may "
+"have a native printer dialog, which may be found by consulting the "
+"documentation for your DE."
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:79
+#: src/config/graphical-session/graphics-drivers/intel.md:33
+#: src/config/network/iwd.md:53
+msgid "## Troubleshooting"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:81
+msgid "### USB printer not shown"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:83
+msgid "The device URI can be found manually by running:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/print/index.md:86
+msgid "``` # /usr/lib/cups/backend/usb ```"
+msgstr ""

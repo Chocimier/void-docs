@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:2
+msgid "# NVIDIA"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:4
+msgid "## nouveau (Open Source Driver)"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:8
+msgid ""
+"This driver is developed mostly by the community, with little input from "
+"Nvidia, and is not as performant as the proprietary driver. It is required "
+"in order to run most Wayland compositors."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:10
+msgid "Install the `mesa-dri` driver or the `xf86-video-nouveau` driver."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:14
+msgid ""
+"Xorg can make use of either of the above mentioned drivers. The latter is "
+"older, more stable and generally the recommended option. However, for newer "
+"devices you might get better performance by using the `mesa-dri` provided "
+"driver."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:17
+msgid ""
+"Note: `xf86-video-nouveau` is already included in the `xorg` meta-package, "
+"but is needed when installing via `xorg-minimal`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:19
+msgid "For using Wayland, users should install the `mesa-dri` provided driver."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:21
+msgid "## nvidia (Proprietary Driver)"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:24
+msgid ""
+"The proprietary drivers are available in the [nonfree repository](../../../"
+"xbps/repositories/index.md#nonfree)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:29
+msgid ""
+"Check if your graphics card belongs to the [legacy branch](https://www."
+"nvidia.com/en-us/drivers/unix/legacy-gpu/). If it does not, install the "
+"`nvidia` package. Otherwise you should install the appropriate legacy "
+"driver, either `nvidia390` or `nvidia340`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:35
+#, no-wrap
+msgid ""
+"| Brand  | Type        | Model                           | Driver Package |\n"
+"|--------|-------------|---------------------------------|----------------|\n"
+"| NVIDIA | Proprietary | 600+                            | `nvidia`       |\n"
+"| NVIDIA | Proprietary | 300/400/500 Series              | `nvidia390`    |\n"
+"| NVIDIA | Proprietary | GeForce8/9 + 100/200/300 Series | `nvidia340`    |\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:38
+msgid ""
+"The proprietary driver integrates in the kernel through [DKMS](../../kernel."
+"md#dynamic-kernel-module-support-dkms)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:41
+msgid ""
+"This driver offers better performance and power handling, and is recommended "
+"where performance is needed."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:43
+msgid "## 32-bit program support (glibc only)"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:46
+msgid ""
+"In order to run 32-bit programs with driver support, you need to install "
+"additional packages."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:48
+msgid "If using the `nouveau` driver, install the `mesa-dri-32bit` package."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:52
+msgid ""
+"If using the `nvidia` driver, install the `nvidia<x>-libs-32bit` package. "
+"`<x>` represents the legacy driver version (340 or 390) or can be left empty "
+"for the main driver."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:54
+msgid "## Reverting from nvidia to nouveau"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:56
+msgid "### Uninstalling nvidia"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:60
+msgid ""
+"In order to revert to the `nouveau` driver, install the [`nouveau` driver]"
+"(#nouveau-open-source-driver) (if it was not installed already), then remove "
+"the `nvidia`, `nvidia390` or `nvidia340` package, as appropriate."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:63
+msgid ""
+"If you were using the `nvidia340` driver, you will need to install the "
+"`libglvnd` package after removing the `nvidia340` package."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:65
+msgid "### Keeping both drivers"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:70
+msgid ""
+"It is possible to use the `nouveau` driver while still having the `nvidia` "
+"driver installed. To do so, remove the blacklisting of `nouveau` in `/etc/"
+"modprobe.d/nouveau_blacklist.conf`, `/usr/lib/modprobe.d/nvidia.conf`, or `/"
+"usr/lib/modprobe.d/nvidia-dkms.conf` by commenting it out:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:74
+msgid "``` #blacklist nouveau ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:78
+msgid ""
+"For Xorg, specify that it should load the `nouveau` driver rather than the "
+"`nvidia` driver by creating the file `/etc/X11/xorg.conf.d/20-nouveau.conf` "
+"with the following content:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:85
+#, no-wrap
+msgid ""
+"```\n"
+"Section \"Device\"\n"
+"    Identifier \"Nvidia card\"\n"
+"    Driver \"nouveau\"\n"
+"EndSection\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/nvidia.md:86
+msgid "You may need to reboot your system for these changes to take effect."
+msgstr ""

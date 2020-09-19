@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/xbps/repositories/signing.md:2
+msgid "# Signing Repositories"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/signing.md:5
+msgid ""
+"Remote repositories **must** be signed. Local repositories do not need to be "
+"signed."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/signing.md:8
+msgid ""
+"The [xbps-rindex(1)](https://man.voidlinux.org/xbps-rindex.1) tool is used "
+"to sign repositories."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/signing.md:13
+msgid ""
+"The private key for signing packages needs to be a PEM-encoded RSA key. The "
+"key can be generated with either [ssh-keygen(1)](https://man.voidlinux.org/"
+"ssh-keygen.1) or [openssl(1)](https://man.voidlinux.org/openssl.1):"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/signing.md:17
+msgid "``` $ ssh-keygen -t rsa -m PEM -f private.pem ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/signing.md:21
+msgid "``` $ openssl genrsa -out private.pem ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/signing.md:24
+msgid ""
+"Once the key is generated, the public part of the private key has to be "
+"added to the repository metadata. This step is required only once."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/signing.md:28
+msgid ""
+"``` $ xbps-rindex --privkey private.pem --sign --signedby \"I'm Groot\" /"
+"path/to/repository/dir ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/signing.md:30
+msgid "Then sign one or more packages with the following command:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/signing.md:34
+msgid ""
+"``` $ xbps-rindex --privkey private.pem --sign-pkg /path/to/repository/dir/*."
+"xbps ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/repositories/signing.md:35
+msgid "Note that future packages will not be automatically signed."
+msgstr ""

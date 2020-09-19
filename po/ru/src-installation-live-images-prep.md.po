@@ -1,0 +1,164 @@
+# Russian translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:2
+msgid "# Prepare Installation Media"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:5
+msgid ""
+"After [downloading a live image](../index.md#downloading-installation-"
+"media), it must be written to bootable media, such as a USB drive, SD card, "
+"or CD/DVD."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:7
+msgid "## Create a bootable USB drive or SD card on Linux"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:9
+msgid "### Identify the Device"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:13
+msgid ""
+"Before writing the image, identify the device you'll write it to. You can do "
+"this using [fdisk(8)](https://man.voidlinux.org/man8/fdisk.8). After "
+"connecting the storage device, identify the device path by running:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:22
+msgid ""
+"``` # fdisk -l Disk /dev/sda: 7.5 GiB, 8036286464 bytes, 15695872 sectors "
+"Disk model: Your USB Device's Model Units: sectors of 1 * 512 = 512 bytes "
+"Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/"
+"optimal): 512 bytes / 512 bytes ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:28
+msgid ""
+"In the example above, the output shows the USB device as `/dev/sda`. On "
+"Linux, the path to the device will typically be in the form of `/dev/sdX` "
+"(where X is a number) for USB devices, `/dev/mmcblkX` for SD cards, or other "
+"variations depending on the device. You can use the model and size (`7.5GiB` "
+"above, after the path) to identify the device if you're not sure what path "
+"it will have."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:31
+msgid ""
+"Once you've identified the device you'll use, ensure it's not mounted by "
+"unmounting it with [umount(8)](https://man.voidlinux.org/man8/umount.8):"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:36
+msgid "``` # umount /dev/sdX umount: /dev/sdX: not mounted.  ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:38
+msgid "### Write the live image"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:41
+msgid ""
+"The [dd(1)](https://man.voidlinux.org/man1/dd.1) command can be used to copy "
+"a live image to a storage device. Using `dd`, write the live image to the "
+"device:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:44
+#, no-wrap
+msgid ""
+"**Warning**: this will destroy any data currently on the referenced device.\n"
+"Exercise caution.\n"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:51
+msgid ""
+"``` # dd bs=4M if=/path/to/void-live-ARCH-DATE-VARIANT.iso of=/dev/sdX 90+0 "
+"records in 90+0 records out 377487360 bytes (377 MB, 360 MiB) copied, "
+"0.461442 s, 818 MB/s ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:55
+msgid ""
+"`dd` won't print anything until it's completed (or if it failed), so, "
+"depending on the device, this can take a few minutes or longer. You can "
+"enable printing by adding `status=progress` to the command if using GNU "
+"coreutils `dd`."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:57
+msgid "Finally, ensure all data is flushed before disconnecting the device:"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:61
+msgid "``` $ sync ```"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:64
+msgid ""
+"The number of records, amount copied, and rates will all vary depending on "
+"the device and the live image you chose."
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:66
+msgid "## Burning to a CD or DVD"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:70
+msgid ""
+"Any disk burning application should be capable of writing the `.iso` file to "
+"a CD or DVD. The following free software applications are available (cross-"
+"platform support may vary):"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:74
+msgid ""
+"- [Brasero](https://wiki.gnome.org/Apps/Brasero/)  - [K3B](https://userbase."
+"kde.org/K3b)  - [Xfburn](https://goodies.xfce.org/projects/applications/"
+"xfburn)"
+msgstr ""
+
+#. type: Plain text
+#: src/installation/live-images/prep.md:76
+msgid ""
+"It should be noted that, with a CD or DVD, live sessions will be less "
+"responsive than with a USB stick or hard drive."
+msgstr ""

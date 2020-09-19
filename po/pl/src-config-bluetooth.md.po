@@ -1,0 +1,107 @@
+# Polish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 09:52+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#. type: Plain text
+#: src/config/media/alsa.md:17 src/config/media/sndio.md:7
+#: src/config/bluetooth.md:37 src/config/graphical-session/wayland.md:75
+#: src/config/network/iwd.md:22 src/installation/guides/chroot.md:130
+#: src/installation/guides/arm-devices/index.md:114
+msgid "## Configuration"
+msgstr ""
+
+#. type: Plain text
+#: src/config/bluetooth.md:2
+msgid "# Bluetooth"
+msgstr ""
+
+#. type: Plain text
+#: src/config/bluetooth.md:7
+msgid ""
+"Ensure the Bluetooth controller is not blocked. Use `rfkill` to check "
+"whether there are any blocks and to remove soft blocks. If there is a hard "
+"block, there is likely either a physical hardware switch or an option in the "
+"BIOS to enable the Bluetooth controller."
+msgstr ""
+
+#. type: Plain text
+#: src/config/bluetooth.md:13
+#, no-wrap
+msgid ""
+"```\n"
+"$ rfkill\n"
+"ID TYPE     DEVICE      SOFT      HARD\n"
+"0 wlan      phy0   unblocked unblocked\n"
+"1 bluetooth hci0     blocked unblocked\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/bluetooth.md:16
+msgid "# rfkill unblock bluetooth ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/bluetooth.md:18 src/config/graphical-session/xorg.md:9
+#: src/config/graphical-session/wayland.md:7
+#: src/config/graphical-session/kde.md:4
+#: src/config/graphical-session/gnome.md:9 src/config/network/iwd.md:7
+#: src/installation/guides/arm-devices/index.md:23
+msgid "## Installation"
+msgstr ""
+
+#. type: Plain text
+#: src/config/bluetooth.md:23
+msgid ""
+"Install the `bluez` package and enable the `bluetoothd` and `dbus` "
+"services.  Then, add your user to the `bluetooth` group and restart the "
+"`dbus` service, or simply reboot the system. Note that restarting the `dbus` "
+"service may kill processes making use of it."
+msgstr ""
+
+#. type: Plain text
+#: src/config/bluetooth.md:27
+msgid ""
+"To use an audio device such as a wireless speaker or headset, ALSA users "
+"need to install the `bluez-alsa` package. [PulseAudio](./media/pulseaudio."
+"md) users do not need any additional software."
+msgstr ""
+
+#. type: Plain text
+#: src/config/bluetooth.md:29 src/config/network/iwd.md:11
+msgid "## Usage"
+msgstr ""
+
+#. type: Plain text
+#: src/config/bluetooth.md:32
+msgid ""
+"Manage Bluetooth connections and controllers using `bluetoothctl`, which "
+"provides a command line interface and also accepts commands on standard "
+"input."
+msgstr ""
+
+#. type: Plain text
+#: src/config/bluetooth.md:35
+msgid ""
+"Consult the [Arch Wiki](https://wiki.archlinux.org/index.php/"
+"Bluetooth#Pairing)  for an example of how to pair a device."
+msgstr ""
+
+#. type: Plain text
+#: src/config/bluetooth.md:38
+msgid "The main configuration file is `/etc/bluetooth/main.conf`."
+msgstr ""

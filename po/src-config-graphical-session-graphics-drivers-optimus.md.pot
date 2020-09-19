@@ -1,0 +1,219 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:2
+msgid "# NVIDIA Optimus"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:5
+msgid ""
+"NVIDIA Optimus refers to a dual graphics configuration found on laptops "
+"consisting of an Intel integrated GPU and a discrete NVIDIA GPU."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:8
+msgid ""
+"There are different methods to take advantage of the NVIDIA GPU, which "
+"depend on the driver version supported by your hardware."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:14
+msgid ""
+"In order to determine the correct driver to install, it is not enough to "
+"look at the \"Supported Products\" list on NVIDIA's website, because they "
+"are not guaranteed to work in an Optimus configuration. So the only way is "
+"to try installing the latest `nvidia`, rebooting, and looking at the kernel "
+"log. If your device is not supported, you will see a message like this:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:23
+msgid ""
+"``` NVRM: The NVIDIA GPU xxxx:xx:xx.x (PCI ID: xxxx:xxxx)  NVRM: installed "
+"in this system is not supported by the xxx.xx NVRM: NVIDIA Linux driver "
+"release.  Please see 'Appendix NVRM: A - Supported NVIDIA GPU Products' in "
+"this release's NVRM: README, available on the Linux driver download page "
+"NVRM: at www.nvidia.com.  ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:25
+msgid ""
+"which means you have to uninstall `nvidia` and install the legacy "
+"`nvidia390`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:27
+msgid ""
+"A summary of the methods supported by Void, which are mutually exclusive:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:29
+msgid "[PRIME Render Offload](#prime-render-offload)"
+msgstr ""
+
+#. type: Bullet: '- '
+#: src/config/graphical-session/graphics-drivers/optimus.md:34
+msgid "only available on `nvidia`"
+msgstr ""
+
+#. type: Bullet: '- '
+#: src/config/graphical-session/graphics-drivers/optimus.md:34
+msgid "allows to switch to the NVIDIA GPU on a per-application basis"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:34
+#, no-wrap
+msgid ""
+"- more flexible but power saving capabilities depend on the hardware (pre-Turing\n"
+"   devices are not shut down completely)\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:36
+msgid "Offloading Graphics Display with RandR 1.4"
+msgstr ""
+
+#. type: Bullet: '- '
+#: src/config/graphical-session/graphics-drivers/optimus.md:41
+msgid "available on `nvidia` and `nvidia390`"
+msgstr ""
+
+#. type: Bullet: '- '
+#: src/config/graphical-session/graphics-drivers/optimus.md:41
+msgid "allows to choose which GPU to use at the start of the X session"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:41
+#, no-wrap
+msgid ""
+"- less flexible, but allows the user to completely shut down the NVIDIA GPU when\n"
+"   not in use, thus saving power\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:43
+msgid "[Bumblebee](#bumblebee)"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:47
+msgid ""
+"- available on `nvidia` and `nvidia390` - allows to switch to the NVIDIA GPU "
+"on a per-application basis - unofficial method, offers poor performance"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:49
+msgid "[Nouveau PRIME](#nouveau-prime)"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:53
+msgid ""
+"- uses the open source driver `nouveau` - allows to switch to the NVIDIA GPU "
+"on a per-application basis - `nouveau` is a reverse-engineered driver and "
+"offers poor performance"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:57
+msgid ""
+"You can check the currently used GPU by searching for `renderer string` in "
+"the output of the `glxinfo` command. It is necessary to install the "
+"`glxinfo` package for this."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:59
+msgid "## PRIME Render Offload"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:64
+msgid ""
+"In this method, GPU switching is done by setting environment variables when "
+"executing the application to be rendered on the NVIDIA GPU. The wrapper "
+"script `prime-run` is available from the `nvidia` package, and can be used "
+"as shown below:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:68
+msgid "``` $ prime-run <application> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:71
+msgid ""
+"For more information, see NVIDIA's [README](https://download.nvidia.com/"
+"XFree86/Linux-x86_64/440.44/README/primerenderoffload.html)"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:73
+msgid "## Bumblebee"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:76
+msgid ""
+"Enable the `bumblebeed` service and add the user to the `bumblebee` group. "
+"This requires a re-login to take effect."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:78
+msgid "Run the application to be rendered on the NVIDIA GPU with `optirun`:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:82
+msgid "``` $ optirun <application> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:84
+msgid "## Nouveau PRIME"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:88
+msgid ""
+"This method uses the open source `nouveau` driver. If the NVIDIA drivers are "
+"installed, it is necessary to [configure the system to use `nouveau`](./"
+"nvidia.md#reverting-from-nvidia-to-nouveau)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:90
+msgid "Set `DRI_PRIME=1` to run an application on the NVIDIA GPU:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/optimus.md:93
+msgid "``` $ DRI_PRIME=1 <application> ```"
+msgstr ""

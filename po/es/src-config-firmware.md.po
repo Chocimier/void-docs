@@ -1,0 +1,98 @@
+# Spanish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: Plain text
+#: src/config/firmware.md:2
+msgid "# Firmware"
+msgstr ""
+
+#. type: Plain text
+#: src/config/firmware.md:6
+msgid ""
+"Void provides a number of firmware packages in the repositories. Some "
+"firmware is only available if you have enabled the [nonfree](../xbps/"
+"repositories/index.md#nonfree) repository."
+msgstr ""
+
+#. type: Plain text
+#: src/config/firmware.md:8
+msgid "## Microcode"
+msgstr ""
+
+#. type: Plain text
+#: src/config/firmware.md:13
+msgid ""
+"Microcode is loaded onto the CPU or GPU at boot by the BIOS, but can be "
+"replaced later by the OS itself. An update to microcode can allow a CPU's or "
+"GPU's behavior to be modified to work around certain yet to be discovered "
+"bugs, without the need to replace the hardware."
+msgstr ""
+
+#. type: Plain text
+#: src/config/firmware.md:15
+msgid "### Intel"
+msgstr ""
+
+#. type: Plain text
+#: src/config/firmware.md:21
+msgid ""
+"Install the Intel microcode package, `intel-ucode`. This package is in the "
+"nonfree repo, which has to be [enabled](../xbps/repositories/index."
+"md#nonfree).  After installing this package, it is necessary to regenerate "
+"your [initramfs](./kernel.md#kernel-hooks). For subsequent updates, the "
+"microcode will be added to the initramfs automatically."
+msgstr ""
+
+#. type: Plain text
+#: src/config/firmware.md:23
+msgid "### AMD"
+msgstr ""
+
+#. type: Plain text
+#: src/config/firmware.md:27
+msgid ""
+"Install the AMD package, `linux-firmware-amd`, which contains microcode for "
+"both AMD CPUs and GPUs. AMD CPUs and GPUs will automatically load the "
+"microcode, no further configuration required."
+msgstr ""
+
+#. type: Plain text
+#: src/config/firmware.md:29
+msgid "### Verification"
+msgstr ""
+
+#. type: Plain text
+#: src/config/firmware.md:32
+msgid ""
+"The `/proc/cpuinfo` file has some information under `microcode` that can be "
+"used to verify the microcode update."
+msgstr ""
+
+#. type: Plain text
+#: src/config/firmware.md:34
+msgid "## Removing firmware"
+msgstr ""
+
+#. type: Plain text
+#: src/config/firmware.md:39
+msgid ""
+"By default, `linuxX.Y` packages and the `base-system` package install a "
+"number of firmware packages. It is not necessary to remove unused firmware "
+"packages, but if you wish to do so, you can configure XBPS to [ignore](../"
+"xbps/advanced-usage.md#ignoring-packages) those packages, then remove them."
+msgstr ""

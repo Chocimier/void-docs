@@ -1,0 +1,55 @@
+# Spanish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: Plain text
+#: src/config/media/pulseaudio.md:2
+msgid "# PulseAudio"
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/pulseaudio.md:6
+msgid ""
+"Depending on which applications you use, you might need to provide "
+"PulseAudio with a D-BUS session bus (e.g. via `dbus-run-session`) or a D-BUS "
+"system bus (via the `dbus` service)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/pulseaudio.md:9
+msgid ""
+"For applications which use ALSA directly and don't support PulseAudio, the "
+"`alsa-plugins-pulseaudio` package can make them use PulseAudio through ALSA."
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/pulseaudio.md:15
+msgid ""
+"The PulseAudio package comes with a service file, which is not necessary in "
+"most setups - the PulseAudio maintainers [discourage](https://www."
+"freedesktop.org/wiki/Software/PulseAudio/Documentation/User/SystemWide/)  "
+"using a system-wide setup. Instead, PulseAudio will automatically start when "
+"needed."
+msgstr ""
+
+#. type: Plain text
+#: src/config/media/pulseaudio.md:18
+msgid ""
+"There are several methods of allowing PulseAudio to access to audio devices. "
+"The simplest one is to add your user to the `audio` group. Alternatively, "
+"you can use a session manager, like `elogind`."
+msgstr ""

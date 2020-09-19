@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: src/config/containers-and-vms/libvirt.md:2
+msgid "# libvirt"
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/libvirt.md:6
+msgid ""
+"[libvirt](https://libvirt.org/) is an API and daemon for managing platform "
+"virtualization, supporting virtualization technologies such as LXC, KVM, "
+"QEMU, Bhyve, Xen, VMWare, and Hyper-V."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/libvirt.md:12
+msgid ""
+"To use libvirt, install the `libvirt` package, ensure the `dbus` package is "
+"installed, and [enable](../services/index.md#enabling-services) the `dbus`, "
+"`libvirtd`, `virtlockd` and `virtlogd` services. The `libvirtd` daemon can "
+"be reconfigured at runtime via [virt-admin(1)](https://man.voidlinux.org/"
+"virt-admin.1)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/libvirt.md:18
+msgid ""
+"The `libvirt` package provides the [virsh(1)](https://man.voidlinux.org/"
+"virsh.1)  interface to libvirtd. `virsh` is an interactive shell and batch-"
+"scriptable tool for performing management tasks, including creating, "
+"configuring and running virtual machines, and managing networks and storage. "
+"Note that `virsh` usually needs to be run as root, as described in the "
+"`virsh` man page:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/libvirt.md:22
+msgid ""
+"> Most virsh commands require root privileges to run due to the "
+"communications > channels used to talk to the hypervisor. Running as non "
+"root will return an > error."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/libvirt.md:26
+msgid ""
+"However, if you have the `polkit` and `dbus` packages installed and you "
+"enable the `dbus` service, `libvirtd` will grant necessary privileges to any "
+"user added to the `libvirt` group."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/libvirt.md:29
+msgid ""
+"An alternative to `virsh` is provided by the `virt-manager` and `virt-"
+"manager-tools` packages."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/libvirt.md:33
+msgid ""
+"For general information on libvirt, refer to [the libvirt wiki](https://wiki."
+"libvirt.org/page/Main_Page) and [the wiki's FAQ](https://wiki.libvirt.org/"
+"page/FAQ). For an introduction to libvirt usage, refer to [the \"VM lifecycle"
+"\" page](https://wiki.libvirt.org/page/VM_lifecycle)."
+msgstr ""

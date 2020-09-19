@@ -1,0 +1,108 @@
+# Russian translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. type: Plain text
+#: src/config/session-management.md:2
+msgid "# Session and Seat Management"
+msgstr ""
+
+#. type: Plain text
+#: src/config/session-management.md:6
+msgid ""
+"Session and seat management is not necessary for every setup, but it can be "
+"used to safely create temporary runtime directories, provide access to "
+"hardware devices and multi-seat capabilities, and control system shutdown."
+msgstr ""
+
+#. type: Plain text
+#: src/config/session-management.md:8
+msgid "## D-Bus"
+msgstr ""
+
+#. type: Plain text
+#: src/config/session-management.md:12
+msgid ""
+"D-Bus is an IPC (inter-process communication) mechanism used by userspace "
+"software in Linux. D-Bus can provide a system bus and/or a session bus, the "
+"latter being specific to a user session."
+msgstr ""
+
+#. type: Plain text
+#: src/config/session-management.md:20
+#, no-wrap
+msgid ""
+"- To provide a system bus, you should [enable](./services/index.md) the `dbus`\n"
+"   service. This might require a system reboot to work properly.\n"
+"- To provide a session bus, you can start a given program (usually a window\n"
+"   manager or interactive shell) with\n"
+"   [dbus-run-session(1)](https://man.voidlinux.org/dbus-run-session.1). Most\n"
+"   desktop environments, if launched through an adequate display manager, will\n"
+"   launch a D-Bus session themselves.\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/session-management.md:23
+msgid ""
+"Note that some software assumes the presence of a system bus, while other "
+"software assumes the presence of a session bus."
+msgstr ""
+
+#. type: Plain text
+#: src/config/session-management.md:25 src/config/power-management.md:11
+msgid "## elogind"
+msgstr ""
+
+#. type: Plain text
+#: src/config/session-management.md:30
+msgid ""
+"[elogind(8)](https://man.voidlinux.org/elogind.8) manages user logins and "
+"system power, as a standalone version of `systemd-logind`. elogind provides "
+"necessary features for most desktop environments and Wayland compositors. It "
+"can also be one of the mechanisms for rootless [Xorg](./graphical-session/"
+"xorg.md)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/session-management.md:33
+msgid ""
+"Please read the \"[Power Management](./power-management.md)\" section for "
+"things to consider before installing elogind."
+msgstr ""
+
+#. type: Plain text
+#: src/config/session-management.md:36
+msgid ""
+"To make use of its features, install the `elogind` package and make sure the "
+"[system D-Bus](#d-bus) is enabled. You might need to log out and in again."
+msgstr ""
+
+#. type: Plain text
+#: src/config/session-management.md:39
+msgid ""
+"If you're having any issues with elogind, [enable](./services/index.md) its "
+"service, as waiting for a D-Bus activation can lead to issues."
+msgstr ""
+
+#. type: Plain text
+#: src/config/session-management.md:42
+msgid ""
+"There is an alternative D-Bus configuration which takes advantage of elogind "
+"for features such as seat detection. It requires installing the `dbus-"
+"elogind`, `dbus-elogind-libs` and `dbus-elogind-x11` packages."
+msgstr ""

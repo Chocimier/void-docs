@@ -1,0 +1,203 @@
+# Polish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:2
+msgid "# Common Issues"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:4
+msgid "## Verifying RSA keys"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:7
+msgid ""
+"If you are installing Void for the first time or the Void RSA key has "
+"changed, [xbps-install(1)](https://man.voidlinux.org/xbps-install.1) might "
+"report:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:11
+msgid ""
+"``` <repository> repository has been RSA signed by <rsa_fingerprint> ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:16
+msgid ""
+"To verify the signature, ensure the `<rsa_fingerprint>` matches one of the "
+"fingerprints in both [void-packages](https://github.com/void-linux/void-"
+"packages/tree/master/common/repo-keys)  and [void-mklive](https://github.com/"
+"void-linux/void-mklive/tree/master/keys)."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:18
+msgid "## Errors while updating or installing packages"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:23
+msgid ""
+"If there are any errors while updating or installing a new package, make "
+"sure that you are using the latest version of the remote repository index. "
+"Running [xbps-install(1)](https://man.voidlinux.org/xbps-install.1) with the "
+"`-S` option will guarantee that."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:25
+msgid "### \"Operation not permitted\""
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:27
+msgid "An \"Operation not permitted\" error, such as:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:31
+msgid ""
+"``` ERROR: [reposync] failed to fetch file https://alpha.de.repo.voidlinux."
+"org/current/nonfree/x86_64-repodata': Operation not permitted ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:34
+msgid ""
+"can be caused by your system's date and/or time being incorrect. Ensure your "
+"[date and time](../../config/date-time.md) are correct."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:36
+msgid "### \"Not Found\""
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:38
+msgid "A \"Not Found\" error, such as:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:42
+msgid ""
+"``` ERROR: [reposync] failed to fetch file `https://alpha.de.repo.voidlinux."
+"org/current/musl/x86_64-repodata': Not Found ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:46
+msgid ""
+"usually means your XBPS configuration is pointing to the wrong repositories "
+"for your system. Confirm that your [xbps.d(5)](https://man.voidlinux.org/"
+"xbps.d.5)  files refer to [the correct repositories](../repositories/index."
+"md)."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:48
+msgid "### shlib errors"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:50
+msgid "An \"unresolvable shlib\" error, such as:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:54
+msgid "``` libllvm8-8.0.1_2: broken, unresolvable shlib `libffi.so.6' ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:59
+msgid ""
+"is probably due to orphan packages, already removed from the Void repos, "
+"still being installed on your system. This can be solved by running [xbps-"
+"remove(1)](https://man.voidlinux.org/xbps-remove.1) with the `-o` option, "
+"which removes orphan packages."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:61
+msgid "If you get an error message saying:"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:65
+msgid "``` Transaction aborted due to unresolved shlibs ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:70
+msgid ""
+"the repositories are in the staging state, which can happen due to large "
+"builds.  The solution is to wait for the builds to finish. You can view the "
+"builds' progress in the [Buildbot's Waterfall Display](https://build."
+"voidlinux.org/waterfall)."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:72
+msgid "### repodata errors"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:79
+msgid ""
+"In March 2020, the compression format used for the repository data "
+"(repodata)  was changed from gzip to zstd. If XBPS wasn't updated to version "
+"`0.54` (released June 2019) or newer, it is not possible to update the "
+"system with it.  Unfortunately, there isn't an error message for this case, "
+"but it can be detected by running `xbps-install` with the `-Sd` flags. The "
+"debug message for this error is shown below."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:83
+msgid ""
+"``` [DEBUG] [repo] `//var/db/xbps/"
+"https___alpha_de_repo_voidlinux_org_current/x86_64-repodata' failed to open "
+"repodata archive Invalid or incomplete multibyte or wide character ```"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:86
+msgid ""
+"In this situation, it is necessary to follow the steps in [xbps-static](./"
+"static.md)."
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:88
+msgid "## Broken systems"
+msgstr ""
+
+#. type: Plain text
+#: src/xbps/troubleshooting/common-issues.md:91
+msgid ""
+"If your system is for some reason broken and can't perform updates or "
+"package installations, using a [statically linked version of xbps](./static."
+"md) to update and install packages can help you avoid reinstalling the whole "
+"system."
+msgstr ""

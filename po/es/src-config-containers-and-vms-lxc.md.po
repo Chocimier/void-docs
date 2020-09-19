@@ -1,0 +1,250 @@
+# Spanish translations for PACKAGE package
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"PO-Revision-Date: 2020-09-19 00:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:2
+msgid "# LXC"
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:9
+msgid ""
+"The [Linux Containers project](https://linuxcontainers.org/) includes three "
+"subprojects: [LXC](https://linuxcontainers.org/lxc/introduction/), [LXD]"
+"(https://linuxcontainers.org/lxd/introduction/) and [LXCFS](https://"
+"linuxcontainers.org/lxcfs/introduction/). The project also included the "
+"CGManager project, which has been deprecated in favor of the CGroup "
+"namespace in recent kernels."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:11
+msgid "## Configuring LXC"
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:13
+msgid "Install the `lxc` package."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:19
+msgid ""
+"Creating and running privileged containers as `root` does not require any "
+"configuration; simply use the various `lxc-*` commands, such as [lxc-"
+"create(1)](https://man.voidlinux.org/lxc-create.1), [lxc-start(1)](https://"
+"man.voidlinux.org/lxc-start.1), [lxc-attach(1)](https://man.voidlinux.org/"
+"lxc-attach.1), etc."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:21
+msgid "### Creating unprivileged containers"
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:27
+msgid ""
+"User IDs (UIDs) and group IDs (GIDs) normally range from 0 to 65535.  "
+"Unprivileged containers enhance security by mapping UID and GID ranges "
+"inside each container to ranges not in use by the host system. The unused "
+"host ranges must be *subordinated* to the user who will be running the "
+"unprivileged containers."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:31
+msgid ""
+"Subordinate UIDs and GIDs are assigned in the [subuid(5)](https://man."
+"voidlinux.org/subuid.5) and [subgid(5)](https://man.voidlinux.org/subgid.5) "
+"files, respectively."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:34
+msgid ""
+"To create unprivileged containers, first edit `/etc/subuid` and `/etc/"
+"subgid` to delegate ranges. For example:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:39
+msgid "``` root:1000000:65536 user:2000000:65536 ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:41
+msgid "In each colon-delimited entry:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:45
+msgid ""
+"- the first field is the user to which a subordinate range will be assigned; "
+"- the second field is the smallest numeric ID defining a subordinate range; "
+"and - the third field is the number of consecutive IDs in the range."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:48
+msgid ""
+"The [usermod(8)](https://man.voidlinux.org/usermod.8) program may also be "
+"used to manipulate suborinated IDs."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:54
+msgid ""
+"Generally, the number of consecutive IDs should be an integer multiple of "
+"65536; the starting value is not important, except to ensure that the "
+"various ranges defined in the file do not overlap. In this example, `root` "
+"controls UIDs (or, from `subgid`, GIDs) ranging from 1000000 to 1065535, "
+"inclusive; `user` controls IDs ranging from 2000000 to 2065535."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:60
+msgid ""
+"Before creating a container, the user owning the container will need an [lxc."
+"conf(5)](https://man.voidlinux.org/lxc.conf.5) file specifying the subuid "
+"and subgid range to use. For root-owned containers, this file resides at `/"
+"etc/lxc/default.conf`; for unprivileged users, the file resides at `~/."
+"config/lxc/default.conf`. Mappings are described in lines of the form"
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:65
+msgid "``` lxc.idmap = u 0 1000000 65536 lxc.idmap = g 0 1000000 65536 ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:73
+msgid ""
+"The isolated `u` character indicates a UID mapping, while the isolated `g` "
+"indicates a GID mapping. The first numeric value should generally always be "
+"0; this indicates the start of the UID or GID range *as seen from within the "
+"container*. The second numeric value is the start of the corresponding range "
+"*as seen from outside the container*, and may be an arbitrary value within "
+"the range delegated in `/etc/subuid` or `/etc/subgid`. The final value is "
+"the number of consecutive IDs to map."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:77
+msgid ""
+"Note that, although the external range start is arbitrary, care must be "
+"taken to ensure that the end of the range implied by the start and number "
+"does not extend beyond the range of IDs delegated to the user."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:81
+msgid ""
+"If configuring a non-root user, edit `/etc/lxc/lxc-usernet` as root to "
+"specify a network device quota. For example, to allow the user named `user` "
+"to create up to 10 `veth` devices connected to the `lxcbr0` bridge:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:85
+msgid "``` user veth lxcbr0 10 ```"
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:89
+msgid ""
+"The user can now create and use unprivileged containers with the `lxc-*` "
+"utilities. To create a simple Void container named `mycontainer`, use a "
+"command similar to:"
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:94
+#, no-wrap
+msgid ""
+"```\n"
+"lxc-create -n mycontainer -t download -- \\\n"
+"\t--dist voidlinux --release current --arch x86_64\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:99
+msgid ""
+"You may substitute another architecture for `x86_64`, and you may specify a "
+"`musl` image by adding `--variant musl` to the end of the command. See the "
+"[LXC Image Server](http://images.linuxcontainers.org) for a list of "
+"available containers."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:108
+msgid ""
+"By default, configurations and mountpoints for system containers are stored "
+"in `/var/lib/lxc`, while configurations for user containers and mountpoints "
+"are stored in `~/.local/share/lxc`. Both of these values can be modified by "
+"setting `lxc.lxcpath` in the [lxc.system.conf(5)](https://man.voidlinux.org/"
+"lxc.system.conf.5) file. The superuser may launch unprivileged containers in "
+"the system `lxc.lxcpath` defined in `/etc/lxc/lxc.conf`; regular users may "
+"launch unprivileged containers in the personal `lxc.lxcpath` defined in `~/."
+"config/lxc/lxc.conf`."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:116
+msgid ""
+"All containers will share the same subordinate UID and GID maps by default. "
+"This is permissible, but it means that an attacker who gains elevated access "
+"within one container, and can somehow break out of that container, will have "
+"similar access to other containers. To isolate containers from each other, "
+"alter the `lxc.idmap` ranges in `default.conf` to point to a unique range "
+"*before* you create each container. Trying to fix permissions on a container "
+"created with the wrong map is possible, but inconvenient."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:118
+msgid "## LXD"
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:121
+msgid ""
+"LXD provides an alternative interface to LXC's `lxc-*` utilities. However, "
+"it does not require the configuration described in [the previous section]"
+"(#lxc)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:124
+msgid ""
+"Install the `lxd` package, and [enable](../services/index.md#enabling-"
+"services)  the `lxd` service."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:126
+msgid "LXD users must belong to the `lxd` group."
+msgstr ""
+
+#. type: Plain text
+#: src/config/containers-and-vms/lxc.md:128
+msgid ""
+"Use the `lxc` command to manage instances, as described [here](https://"
+"linuxcontainers.org/lxd/getting-started-cli/#lxd-client)."
+msgstr ""
