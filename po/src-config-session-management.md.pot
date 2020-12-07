@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"POT-Creation-Date: 2020-12-07 19:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,9 +99,35 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: src/config/session-management.md:42
+#: src/config/session-management.md:43
 msgid ""
 "There is an alternative D-Bus configuration which takes advantage of elogind "
 "for features such as seat detection. It requires installing the `dbus-"
 "elogind`, `dbus-elogind-libs` and `dbus-elogind-x11` packages."
+msgstr ""
+
+#. type: Plain text
+#: src/config/session-management.md:45
+msgid "## seatd"
+msgstr ""
+
+#. type: Plain text
+#: src/config/session-management.md:48
+msgid ""
+"[seatd(1)](https://man.voidlinux.org/seatd.1) is a minimal seat management "
+"daemon and an alternative to elogind."
+msgstr ""
+
+#. type: Plain text
+#: src/config/session-management.md:52
+msgid ""
+"To use it, install the `seatd` package and enable its service. If you want "
+"non-root users to be able to access the seatd session, add them to the "
+"`_seatd` group."
+msgstr ""
+
+#. type: Plain text
+#: src/config/session-management.md:53
+msgid ""
+"Note that, unlike elogind, seatd doesn't do anything besides managing seats."
 msgstr ""

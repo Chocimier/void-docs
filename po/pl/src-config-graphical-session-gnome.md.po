@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"POT-Creation-Date: 2020-12-07 19:31+0100\n"
 "PO-Revision-Date: 2020-09-19 00:01+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,10 +18,10 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 
 #. type: Plain text
-#: src/config/network/iwd.md:7 src/config/bluetooth.md:18
-#: src/config/graphical-session/kde.md:4 src/config/graphical-session/xorg.md:9
+#: src/config/bluetooth.md:18 src/config/graphical-session/xorg.md:9
 #: src/config/graphical-session/wayland.md:7
-#: src/config/graphical-session/gnome.md:9
+#: src/config/graphical-session/kde.md:4
+#: src/config/graphical-session/gnome.md:12 src/config/network/iwd.md:7
 #: src/installation/guides/arm-devices/index.md:23
 msgid "## Installation"
 msgstr ""
@@ -39,49 +39,50 @@ msgstr ""
 #. type: Plain text
 #: src/config/graphical-session/gnome.md:7
 msgid ""
+"GNOME supports both X and Wayland sessions. Follow the \"[Wayland](./wayland."
+"md)\" or \"[Xorg](./xorg.md)\" sections to setup your preferred environment."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/gnome.md:10
+msgid ""
 "Install the `dbus` package, ensure the `dbus` service is enabled, and reboot "
 "for the changes to take effect."
 msgstr ""
 
 #. type: Plain text
-#: src/config/graphical-session/gnome.md:12
-msgid ""
-"Install the `gnome` package for a GNOME environment which includes GNOME "
-"applications."
-msgstr ""
-
-#. type: Plain text
 #: src/config/graphical-session/gnome.md:16
 msgid ""
-"A minimal GNOME environment can be created by installing the `mesa-dri`, "
-"`gnome-session`, `gdm` and `adwaita-icon-theme` packages. (Note, however, "
-"that not all GNOME features may be present or functional.)"
+"Install the `gnome` package for a GNOME environment which includes the base "
+"GNOME desktop and a subset of GNOME applications. Additional applications "
+"are available via the `gnome-apps` package."
 msgstr ""
 
 #. type: Plain text
-#: src/config/graphical-session/gnome.md:21
+#: src/config/graphical-session/gnome.md:20
+msgid ""
+"A minimal GNOME environment can be created by installing the `gnome-core` "
+"package. Note, however, that not all GNOME features may be present or "
+"functional."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/gnome.md:23
+msgid ""
+"If you require [ZeroConf](http://www.zeroconf.org/) support, install the "
+"`avahi` package and enable the `avahi-daemon` service."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/gnome.md:25
+msgid "## Starting GNOME"
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/gnome.md:29
 msgid ""
 "The `gdm` package provides the `gdm` service for the GNOME Display Manager; "
 "[test the service](../services/index.md#testing-services) before enabling "
 "it.  GDM defaults to providing a Wayland session via the `mutter` window "
 "manager, but an X session can be chosen instead."
-msgstr ""
-
-#. type: Plain text
-#: src/config/graphical-session/gnome.md:24
-msgid ""
-"If you wish to start an X-based GNOME session from the console, use [startx]"
-"(./xorg.md#startx) to run `gnome-session`."
-msgstr ""
-
-#. type: Plain text
-#: src/config/graphical-session/gnome.md:26
-msgid "GNOME applications can be installed via the `gnome-apps` package."
-msgstr ""
-
-#. type: Plain text
-#: src/config/graphical-session/gnome.md:28
-msgid ""
-"If you require [ZeroConf](http://www.zeroconf.org/) support, install the "
-"`avahi` package and enable the `avahi-daemon` service."
 msgstr ""

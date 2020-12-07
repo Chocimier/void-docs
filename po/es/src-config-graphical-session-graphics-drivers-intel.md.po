@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-09-19 09:52+0200\n"
+"POT-Creation-Date: 2020-12-07 19:31+0100\n"
 "PO-Revision-Date: 2020-09-19 09:52+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -94,7 +94,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: src/config/graphical-session/graphics-drivers/intel.md:43
+#: src/config/graphical-session/graphics-drivers/intel.md:44
 msgid ""
 "The kernels packaged by Void are configured with "
 "`CONFIG_INTEL_IOMMU_DEFAULT_ON=y`, which can lead to issues with their "
@@ -106,4 +106,13 @@ msgid ""
 "of internal GPUs. If you have another internal GPU and your issues are fixed "
 "by this kernel option, you should file a bug reporting the problem to kernel "
 "developers."
+msgstr ""
+
+#. type: Plain text
+#: src/config/graphical-session/graphics-drivers/intel.md:48
+msgid ""
+"For newer Intel chipsets, the [DDX](../xorg.md#ddx) drivers may interfere "
+"with correct operation. This is characterized by graphical acceleration not "
+"working and general graphical instability. If this is the case, try removing "
+"all `xf86-video-*` packages."
 msgstr ""

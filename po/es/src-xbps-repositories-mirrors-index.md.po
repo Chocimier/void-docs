@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"POT-Creation-Date: 2020-12-07 19:31+0100\n"
 "PO-Revision-Date: 2020-09-19 00:01+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -74,7 +74,7 @@ msgid "### Globally-available mirrors"
 msgstr ""
 
 #. type: Plain text
-#: src/xbps/repositories/mirrors/index.md:51
+#: src/xbps/repositories/mirrors/index.md:49
 #, no-wrap
 msgid ""
 "| Repository                                         | Location          |\n"
@@ -91,23 +91,21 @@ msgid ""
 "| <http://ftp.dk.xemacs.org/voidlinux/>              | EU: Denmark       |\n"
 "| <https://mirrors.dotsrc.org/voidlinux/>            | EU: Denmark       |\n"
 "| <https://quantum-mirror.hu/mirrors/pub/voidlinux/> | EU: Hungary       |\n"
-"| <https://mirror.i-novus.ru/mirrors/voidlinux/>     | EU: Ireland       |\n"
 "| <http://ftp.debian.ru/mirrors/voidlinux/>          | EU: Russia        |\n"
 "| <https://mirror.yandex.ru/mirrors/voidlinux/>      | EU: Russia        |\n"
 "| <https://cdimage.debian.org/mirror/voidlinux/>     | EU: Sweden        |\n"
 "| <https://ftp.acc.umu.se/mirror/voidlinux/>         | EU: Sweden        |\n"
-"| <https://ftp.gnome.org/mirror/voidlinux/>          | EU: Sweden        |\n"
 "| <https://ftp.lysator.liu.se/pub/voidlinux/>        | EU: Sweden        |\n"
 "| <https://ftp.sunet.se/mirror/voidlinux/>           | EU: Sweden        |\n"
 msgstr ""
 
 #. type: Plain text
-#: src/xbps/repositories/mirrors/index.md:53
+#: src/xbps/repositories/mirrors/index.md:51
 msgid "### Region-locked mirrors"
 msgstr ""
 
 #. type: Plain text
-#: src/xbps/repositories/mirrors/index.md:57
+#: src/xbps/repositories/mirrors/index.md:55
 #, no-wrap
 msgid ""
 "| Repository                                    | Location    |\n"
@@ -116,24 +114,24 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: src/xbps/repositories/mirrors/index.md:59
+#: src/xbps/repositories/mirrors/index.md:57
 msgid "## Tor Mirrors"
 msgstr ""
 
 #. type: Plain text
-#: src/xbps/repositories/mirrors/index.md:62
+#: src/xbps/repositories/mirrors/index.md:60
 msgid ""
 "Void Linux is also mirrored on the Tor network. See [Using Tor Mirrors](./"
 "tor.md) for more information."
 msgstr ""
 
 #. type: Plain text
-#: src/xbps/repositories/mirrors/index.md:64
+#: src/xbps/repositories/mirrors/index.md:62
 msgid "## Creating a mirror"
 msgstr ""
 
 #. type: Plain text
-#: src/xbps/repositories/mirrors/index.md:70
+#: src/xbps/repositories/mirrors/index.md:68
 msgid ""
 "If you'd like to set up a mirror, and are confident you can keep it "
 "reasonably up-to-date, follow one of the many guides available for mirroring "
@@ -143,7 +141,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: src/xbps/repositories/mirrors/index.md:74
+#: src/xbps/repositories/mirrors/index.md:72
 msgid ""
 "A full mirror requires around 1TB of storage. It is also possible to mirror "
 "only part of the repositories. Excluding debug packages is one way of "
@@ -151,7 +149,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: src/xbps/repositories/mirrors/index.md:77
+#: src/xbps/repositories/mirrors/index.md:75
 msgid ""
 "Please keep in mind that we pay bandwidth for all data sent out from the "
 "Tier 1 mirrors. You can respect this by only mirroring if your use case for "

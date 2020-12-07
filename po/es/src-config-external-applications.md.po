@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-09-19 00:01+0200\n"
+"POT-Creation-Date: 2020-12-07 19:31+0100\n"
 "PO-Revision-Date: 2020-09-19 00:01+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -116,37 +116,11 @@ msgstr ""
 
 #. type: Plain text
 #: src/config/external-applications.md:54
-msgid "## AppImages"
-msgstr ""
-
-#. type: Plain text
-#: src/config/external-applications.md:59
-msgid ""
-"An [AppImage](https://appimage.org/) is a file that bundles an application "
-"with everything needed to run it. An AppImage can be used by making it "
-"executable and running it; installation is not required. AppImages can be "
-"run in a sandbox, such as [firejail](https://firejail.wordpress.com/)."
-msgstr ""
-
-#. type: Plain text
-#: src/config/external-applications.md:62
-msgid ""
-"Some of the applications for which an AppImage is available can be found on "
-"[AppImageHub](https://appimage.github.io/)."
-msgstr ""
-
-#. type: Plain text
-#: src/config/external-applications.md:64
-msgid "AppImages do not yet work on musl installations."
-msgstr ""
-
-#. type: Plain text
-#: src/config/external-applications.md:66
 msgid "### Troubleshooting"
 msgstr ""
 
 #. type: Plain text
-#: src/config/external-applications.md:71
+#: src/config/external-applications.md:59
 msgid ""
 "Some apps may not function properly (e.g. not being able to access the host "
 "system's files). Some of these issues can be fixed by installing one or more "
@@ -155,10 +129,36 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: src/config/external-applications.md:74
+#: src/config/external-applications.md:62
 msgid ""
 "Some Flatpaks require [D-Bus](./session-management.md#d-bus) and/or "
 "[Pulseaudio](./media/pulseaudio.md)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/external-applications.md:64
+msgid "## AppImages"
+msgstr ""
+
+#. type: Plain text
+#: src/config/external-applications.md:69
+msgid ""
+"An [AppImage](https://appimage.org/) is a file that bundles an application "
+"with everything needed to run it. An AppImage can be used by making it "
+"executable and running it; installation is not required. AppImages can be "
+"run in a sandbox, such as [firejail](https://firejail.wordpress.com/)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/external-applications.md:72
+msgid ""
+"Some of the applications for which an AppImage is available can be found on "
+"[AppImageHub](https://appimage.github.io/)."
+msgstr ""
+
+#. type: Plain text
+#: src/config/external-applications.md:74
+msgid "AppImages do not yet work on musl installations."
 msgstr ""
 
 #. type: Plain text
